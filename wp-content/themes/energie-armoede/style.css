@@ -1,0 +1,71 @@
+* {
+  padding:0;
+  margin:0;
+}
+
+.site-main, .site {
+  max-width:1200px;
+  margin-left:auto;
+  margin-right:auto;
+}
+
+.navigation {
+  width:100%;
+  padding:10px;
+  display:flex;
+  justify-content: space-between;
+    box-sizing: border-box;
+}
+
+.menu-default-menu-container ul {
+  list-style:none;
+  display:flex;
+  justify-content: flex-end;
+}
+
+.menu-default-menu-container ul li {
+  margin-right:15px;
+}
+
+.index-header {
+  width:100%;
+  background-image:url('/energiearmoede/wp-content/uploads/2016/11/headerbeeld.jpg');
+  background-size:cover;
+  background-position:center;
+  height:70vh;
+  position:relative;
+}
+
+.header-title {
+  position:absolute;
+  bottom:30px;
+  left:50px;
+}
+
+.categories {
+  display:flex;
+  flex-wrap:wrap;
+}
+
+.category-tile {
+  width:50%;
+  border:1px solid red;
+  box-sizing:border-box;
+  align-items:center;
+  display:flex;
+}
+
+.category-tile a {
+  width:50%;
+}
+
+.category-tile img {
+  width:100%;
+}
+
+.category-data {
+  text-align:center;
+  width:50%;
+  padding:20px;
+  box-sizing: border-box;
+}
