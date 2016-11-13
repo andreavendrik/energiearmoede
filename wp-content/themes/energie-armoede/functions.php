@@ -1,14 +1,6 @@
 <?php
-/**
- * This is where the magic happens :)
- *
- * I like having all core theme actions & filters in a single class.
- * Keeps things organized.
- *
- * @package WPEX Starter Theme
- */
 
-class WPEX_Starter_Theme_Setup {
+class EnergieArmoedeThemeSetup {
 
 	/**
 	 * These 2 things are generally used often in functions.php so lets define them as vars.
@@ -70,7 +62,7 @@ class WPEX_Starter_Theme_Setup {
 
 		// Load main style.css
 		wp_enqueue_style(
-			'wpex-style',          // Handle
+			'energiearmoede-style',          // Handle
 			get_stylesheet_uri(),  // Location
 			false,                 // Dependency
 			$this->theme_version() // Version
@@ -81,7 +73,7 @@ class WPEX_Starter_Theme_Setup {
 
 		// Load basically a blank js template for your custom js edits
 		wp_enqueue_script(
-			'wpex-functions',
+			'energiearmoede-functions',
 			$this->template_directory_uri .'/js/functions.js',
 			array( 'jquery' ),
 			$this->theme_version()
@@ -101,11 +93,11 @@ class WPEX_Starter_Theme_Setup {
 	public function theme_setup() {
 
 		// Load text domain for translations
-		load_theme_textdomain( 'wpex', $this->template_directory .'/languages' );
+		load_theme_textdomain( 'energiearmoede', $this->template_directory .'/languages' );
 
 		// Add menu
 		register_nav_menus( array(
-			'primary' => __( 'Primary', 'wpex' ),
+			'primary' => __( 'Primary', 'energiearmoede' ),
 		) );
 
 		// Declare theme support
@@ -122,31 +114,7 @@ class WPEX_Starter_Theme_Setup {
 	 *
 	 * @since 1.0.0
 	 */
-	public static function register_sidebars() {
-
-		// Main sidebar
-		register_sidebar( array(
-			'name'          => __( 'Sidebar', 'wpex' ),
-			'id'            => 'sidebar',
-			'description'   => __( 'Widget displayed as a sidebar.', 'wpex' ),
-			'before_widget' => '<li id="%1$s" class="widget %2$s">',
-			'after_widget'  => '</li>',
-			'before_title'  => '<span class="widgettitle">',
-			'after_title'   => '</span>',
-		) );
-
-		// Footer widget
-		register_sidebar( array(
-			'name'          => __( 'Footer 1', 'wpex' ),
-			'id'            => 'footer_widget_one',
-			'description'   => __( 'Widget displayed in the site footer.', 'wpex' ),
-			'before_widget' => '<li id="%1$s" class="widget %2$s">',
-			'after_widget'  => '</li>',
-			'before_title'  => '<span class="widgettitle">',
-			'after_title'   => '</span>',
-		) );
-
-	}
+	public static function register_sidebars() {}
 
 	/**
 	 * Add HTML5 support for older browsers.
@@ -163,26 +131,4 @@ class WPEX_Starter_Theme_Setup {
 }
 
 // Start the class and set as variable for child-theming
-$wpex_starter_theme_setup = new WPEX_Starter_Theme_Setup;
-
-
-	// Category post count
-
-	function wt_get_category_count($input = '') {
-	global $wpdb;
-	if($input == '')
-	{
-		$category = get_the_category();
-		return $category[0]->category_count;
-	}
-	elseif(is_numeric($input))
-	{
-		$SQL = "SELECT $wpdb->term_taxonomy.count FROM $wpdb->terms, $wpdb->term_taxonomy WHERE $wpdb->terms.term_id=$wpdb->term_taxonomy.term_id AND $wpdb->term_taxonomy.term_id=$input";
-		return $wpdb->get_var($SQL);
-	}
-	else
-	{
-		$SQL = "SELECT $wpdb->term_taxonomy.count FROM $wpdb->terms, $wpdb->term_taxonomy WHERE $wpdb->terms.term_id=$wpdb->term_taxonomy.term_id AND $wpdb->terms.slug='$input'";
-		return $wpdb->get_var($SQL);
-	}
-}
+$energie_armoede_theme_setup = new EnergieArmoedeThemeSetup;

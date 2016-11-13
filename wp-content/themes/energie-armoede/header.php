@@ -14,23 +14,18 @@
 
 	<header id="masthead" class="site-header">
 
-		<div class="site-branding">
+		<?php if ( has_nav_menu( 'primary' ) ) : ?>
 
-			<?php if ( has_nav_menu( 'primary' ) ) : ?>
+			<nav id="site-navigation" class="navigation" role="navigation">
+				<span class="site-title clr">
+					<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a>
+				</span><!-- .site-title -->
 
-				<nav id="site-navigation" class="navigation" role="navigation">
-					<span class="site-title clr">
-						<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a>
-					</span><!-- .site-title -->
-
-					<?php wp_nav_menu( array(
-						'theme_location' => 'primary',
-						'menu_id'        => 'primary-menu',
-					) ); ?>
-				</nav><!-- #site-navigation -->
-
-		</div><!-- .site-branding -->
-
+				<?php wp_nav_menu( array(
+					'theme_location' => 'primary',
+					'menu_id'        => 'primary-menu',
+				) ); ?>
+			</nav><!-- #site-navigation -->
 
 		<?php endif; ?>
 
