@@ -1,39 +1,47 @@
 <?php
-/**
- * The template for displaying all single posts.
- *
- * @link https://developer.wordpress.org/themes/basics/template-hierarchy/#single-post
- *
- * @package WPEX Starter Theme
- */
+get_header();
 
-get_header(); ?>
+$post = get_post();
+$categories = get_the_category($post->ID);
+$category = $categories[0];
 
-	<div id="primary" class="content-area">
-		<main id="main" class="site-main" role="main">
+$related_posts = get_posts([
+	"category_name" => $category->name,
+	"offset" => 0,
+	"posts_per_page" => -1
+]);
 
-		<?php while ( have_posts() ) : the_post(); ?>
+$next_post = get_next_post($post->ID);
+$prev_post = get_adjacent_post($post->ID);
+?>
 
-			<header class="single-header clr">
-				<h1 class="single-title"><?php the_title(); ?></h1>
-			</header><!-- .single-header -->
+<header id="category-header">
+	<a href="<?php echo get_bloginfo('url'); ?>">terug naar overzicht</a>
+	<h2><?php echo $category->name; ?></h2>
+	<article><?php echo $category->description; ?></article>
+	<nav id="prev-next-post-nav">
+		<?php if($prev_post->ID): ?>
+			<a href="<?php echo get_permalink($prev_post->ID); ?>">Vorige post</a>
+		<?php endif; ?>
+		<?php if($next_post->ID): ?>
+			<a href="<?php echo get_permalink($next_post->ID); ?>">Volgende post</a>
+		<?php endif; ?>
+	</nav>
+</header>
 
-			<article class="single-content clr">
-				<?php the_content(); ?>
-			</article><!-- .single-content -->
+<main id="content">
+	<h1><?php echo $post->post_title; ?></h1>
+	<article><?php echo $post->post_content; ?></article>
+</main>
 
-			<?php the_post_navigation(); ?>
+<aside>
+	<ul id="related-posts">
+		<?php foreach($related_posts as $related_post): ?>
+			<li>
+				<a href="<?php echo get_permalink($related_post->ID); ?>"><?php echo $related_post->post_title; ?></a>
+			</li>
+		<?php endforeach; ?>
+	</ul>
+</aside>
 
-			<?php if ( comments_open() || get_comments_number() ) : ?>
-
-				<?php comments_template(); ?>
-				
-			<?php endif; ?>
-
-		<?php endwhile; // End of the loop. ?>
-
-		</main><!-- #main -->
-	</div><!-- #primary -->
-
-<?php get_sidebar(); ?>
 <?php get_footer(); ?>

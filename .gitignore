@@ -4,3 +4,4 @@ wp-content/uploads
 wp-content/plugins
 !wp-content/themes/energie-armoede
 wp-includes
+.DS_Store

@@ -3,7 +3,8 @@
   margin:0;
 }
 
-.site-main, .site {
+main {
+  display: block;
   max-width:1200px;
   margin-left:auto;
   margin-right:auto;
@@ -49,18 +50,21 @@
 
 .category-tile {
   width:50%;
-  border:1px solid red;
   box-sizing:border-box;
   align-items:center;
   display:flex;
 }
-
+.category-tile:nth-of-type(3), .category-tile:nth-of-type(4) {
+  flex-direction:row-reverse;
+}
 .category-tile a {
   width:50%;
+  height:100%;
 }
 
 .category-tile img {
   width:100%;
+  height:100%;
 }
 
 .category-data {
