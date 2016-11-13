@@ -14,14 +14,14 @@ $category_posts = new WP_Query([
   <img src="<?php echo $category_image_url; ?>">
 </a>
 <div class="category-data">
-  <p>
+  <h2>
     <a
-      href="<?php echo esc_url( $category_link ); ?>"
+      href="<?php echo get_permalink($recent_posts->ID); ?>"
       title="<?php echo $category_name; ?>"><?php echo $category_name; ?></a>
-  </p>
-  <p>
+  </h2>
+  <h4>
     <?php echo $category_posts->found_posts; ?> artikelen
-  </p>
+  </h4>
   <p>
     <?php echo category_description( $category_id ); ?>
   </p>
