@@ -31,7 +31,7 @@ $prev_post = get_adjacent_post($post->ID);
 
 <main id="content">
 	<h1><?php echo $post->post_title; ?></h1>
-	<article><?php echo $post->post_content; ?></article>
+	<article><p><?php echo $post->post_content; ?></p></article>
 </main>
 
 <aside>
