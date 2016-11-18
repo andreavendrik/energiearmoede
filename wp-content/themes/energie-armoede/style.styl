@@ -4,7 +4,7 @@ blue = #005A73
 bluemiddle = #80ACB9
 bluelight = #E5EEF1
 black = #1E1E1E
-breakpoint1 = 1000px
+breakpoint1 = 1040px
 breakpoint2 = 860px
 breakpoint3 = 600px
 breakpoint4 = 480px
@@ -37,21 +37,21 @@ a
     transition 0.1s
 
 h1
-  headerfont(40px, 400)
+  headerfont(42px, 400)
   color black
 
 h2
-  headerfont(35px)
-
-h3
-  headerfont(25px, 200)
-  line-height 35px
-  margin-top 30px
-  margin-bottom 50px
-  color black
+  headerfont(33px)
 
 h2 a
   text-decoration: none
+  color black
+
+h3
+  headerfont(24px, 200)
+  line-height 32px
+  margin-top 30px
+  margin-bottom 50px
   color black
 
 h4
@@ -76,7 +76,7 @@ p
   position fixed
   height 60px
   z-index 999
-  background-color rgba(255,255,255,0.9)
+  background-color rgba(255,255,255,0.95)
   display flex
   width 100%
   left 0
@@ -98,6 +98,27 @@ p
     position absolute
     top 0
     margin-left 75px
+
+@media only screen and (max-width:breakpoint3)
+  #navigation-items
+    img
+      margin-left 38px
+
+@media only screen and (max-width:breakpoint4)
+  #navigation-items
+    img
+      width 150px
+
+#mobile-navigation
+  display none
+  background-color red
+
+@media only screen and (max-width:breakpoint4)
+  #mobile-navigation
+    display block
+  .navigation
+    display none
+
 
 .menu-default-menu-container
   ul
@@ -124,6 +145,10 @@ p
     color white
   h3
     color white
+
+@media only screen and (max-width:breakpoint3)
+  .header-title
+    left 38px
 
 .categories
   display flex
@@ -205,16 +230,22 @@ p
   .category-data
     h2
       headerfont(28px)
+    p
+      bodyfont(14px,20px)
 
 @media only screen and (max-width:breakpoint2)
   .category-data
     h2
       headerfont()
+    p
+      bodyfont()
 
 @media only screen and (max-width:660px)
   .category-data
     h2
       headerfont(28px)
+    p
+      bodyfont(14px,20px)
 
 @media only screen and (max-width:breakpoint3)
   .category-data
@@ -223,6 +254,8 @@ p
     h2
       margin-top 20px
       headerfont()
+    p
+      bodyfont()
 
 .general-header
   min-height 300px
