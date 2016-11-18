@@ -4,14 +4,19 @@ blue = #005A73
 bluemiddle = #80ACB9
 bluelight = #E5EEF1
 black = #1E1E1E
-broodtekstfont(font-size=16px, line-height=22px)
+breakpoint1 = 1000px
+breakpoint2 = 860px
+breakpoint3 = 600px
+breakpoint4 = 480px
+
+bodyfont(font-size=16px, line-height=22px)
   font-size font-size
   line-height line-height
   font-family adelle sans, sans-serif
   font-weight 300
   color black
 
-kopfont(font-size=40px, font-weight=200)
+headerfont(font-size=40px, font-weight=200)
   font-family bree serif, sans-serif
   font-weight font-weight
   font-size font-size
@@ -28,18 +33,18 @@ body
 a
   color blue
   &:hover
-    color blue
-    transition 0.3s
+    color bluemiddle
+    transition 0.1s
 
 h1
-  kopfont(40px, 400)
+  headerfont(40px, 400)
   color black
 
 h2
-  kopfont(35px)
+  headerfont(35px)
 
 h3
-  kopfont(25px, 200)
+  headerfont(25px, 200)
   line-height 35px
   margin-top 30px
   margin-bottom 50px
@@ -51,23 +56,23 @@ h2 a
 
 h4
   text-transform uppercase
-  broodtekstfont(12px,12px)
+  bodyfont(12px,12px)
   margin 10px 0px 25px 0px
 
 article
-  broodtekstfont()
+  bodyfont()
 
 p
-  broodtekstfont()
+  bodyfont()
 
 .site-wrapper
-  max-width 1280px
+  max-width 1440px
   margin-left auto
   margin-right auto
   position relative
 
 .navigation
-  kopfont(16px,200)
+  headerfont(16px,200)
   position fixed
   height 60px
   z-index 999
@@ -83,7 +88,7 @@ p
     text-decoration none
 
 #navigation-items
-  max-width 1280px
+  max-width 1440px
   width 100%
   margin auto
   img
@@ -129,13 +134,20 @@ p
   box-sizing border-box
   align-items center
   display flex
+  flex-wrap wrap
   background-color white
-  a
-    width 50%
-    height 100%
+
+.category-image
+  width 50%
+  height 100%
   img
     width 100%
     height 100%
+
+@media only screen and (max-width:breakpoint3)
+  .category-image
+    width 100%
+    height auto
 
 .category-tile:nth-of-type(3), .category-tile:nth-of-type(4)
   flex-direction row-reverse
@@ -144,12 +156,39 @@ p
       right -20px
       left auto
 
+@media only screen and (max-width:breakpoint2)
+  .category-tile
+    width 100%
+  .category-tile:nth-of-type(2), .category-tile:nth-of-type(4)
+    flex-direction row-reverse
+    .category-data
+      &:before
+        right -20px
+        left auto
+  .category-tile:nth-of-type(3)
+    flex-direction row
+    .category-data
+      &:before
+        left -20px
+        right auto
+
+@media only screen and (max-width:breakpoint3)
+  .category-tile
+    .category-data
+      &:before
+        left calc(50% - 20px)!important
+        top -22px
+
 .category-data
   text-align center
   width 50%
   padding 20px
   box-sizing border-box
   position relative
+  h2
+    margin 0px 10px
+    overflow: hidden;
+    text-overflow: ellipsis;
   &:before
     content ''
     width 40px
@@ -160,7 +199,30 @@ p
     left -20px
     transform rotate(45deg)
   p
-    broodtekstfont()
+    bodyfont()
+
+@media only screen and (max-width:breakpoint1)
+  .category-data
+    h2
+      headerfont(28px)
+
+@media only screen and (max-width:breakpoint2)
+  .category-data
+    h2
+      headerfont()
+
+@media only screen and (max-width:660px)
+  .category-data
+    h2
+      headerfont(28px)
+
+@media only screen and (max-width:breakpoint3)
+  .category-data
+    width 100%
+    height 200px
+    h2
+      margin-top 20px
+      headerfont()
 
 .general-header
   min-height 300px
@@ -182,11 +244,11 @@ p
   background-repeat no-repeat
   h4
     text-transform lowercase
-    kopfont(14px)
+    headerfont(14px)
     a
-      color black
+      color blue
   h2
-    kopfont(25px,400)
+    headerfont(27px,200)
   article
     margin-top 10px
 
@@ -199,11 +261,11 @@ p
   box-sizing border-box
   background-color white
   h1
-    kopfont(45px,400)
+    headerfont(45px,400)
   article
     max-width 700px
     p
-      broodtekstfont(18px, 30px)
+      bodyfont(18px, 30px)
       margin-top 20px
       &:first-of-type
         margin-top:40px
@@ -217,7 +279,7 @@ p
 aside
   max-width 250px
   margin-right 20px
-  kopfont(18px)
+  headerfont(18px)
   line-height 26px
   ul
     list-style-type decimal
@@ -240,5 +302,7 @@ aside
   color white
   min-height 200px
   p
-    kopfont(18px)
+    headerfont(24px)
     padding-top 50px
+  span
+    headerfont(24px,400)

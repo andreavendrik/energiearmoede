@@ -57,7 +57,7 @@ $prev_post = get_adjacent_post($post->ID);
 	</article>
 
 	<aside id="content-navigation">
-		<h1>Artikelen</h1>
+		<h1>Artikel lijst</h1>
 		<ul id="related-posts">
 			<?php foreach($related_posts as $related_post): ?>
 				<li>
