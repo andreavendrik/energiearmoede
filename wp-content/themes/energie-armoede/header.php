@@ -10,25 +10,22 @@
 
 <body <?php body_class(); ?>>
 
-<div id="page" class="site">
+<div class="site-wrapper">
 
-	<header id="masthead" class="site-header">
-
-		<?php if ( has_nav_menu( 'primary' ) ) : ?>
+	<header class="site-header">
 
 			<nav id="site-navigation" class="navigation" role="navigation">
-				<span class="site-title clr">
-					<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a>
-				</span><!-- .site-title -->
 
-				<?php wp_nav_menu( array(
-					'theme_location' => 'primary',
-					'menu_id'        => 'primary-menu',
-				) ); ?>
-			</nav><!-- #site-navigation -->
+				<div id="navigation-items">
+						<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
+							<img src="/energiearmoede/wp-content/uploads/2016/11/ea_logo.svg">
+						</a>
 
-		<?php endif; ?>
+					<?php wp_nav_menu( array(
+						'theme_location' => 'primary',
+						'menu_id'        => 'primary-menu',
+					) ); ?>
+				</div>
+			</nav>
 
 	</header><!-- #masthead -->
-
-	<div id="content" class="site-content">
