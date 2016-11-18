@@ -10,7 +10,7 @@ $recent_posts = wp_get_recent_posts( $args, ARRAY_A );
 		<?php if ( is_404() ) : ?>
 
 			<header class="page-header">
-				<h1 class="page-title"><?php esc_html_e( 'Oeps! Deze pagina bestaat niet.', 'wpex' ); ?></h1>
+				<h1 class="header-title"><?php esc_html_e( 'Oeps! Deze pagina bestaat niet.', 'wpex' ); ?></h1>
 			</header><!-- .page-header -->
 
 		<?php endif; ?>
@@ -32,15 +32,15 @@ $recent_posts = wp_get_recent_posts( $args, ARRAY_A );
 				include(get_template_directory() . '/category-tile.php');
 
 				$category_name = 'Materialen';
-				$category_image_url = '/energiearmoede/wp-content/uploads/2016/11/materials.png';
+				$category_image_url = '/energiearmoede/wp-content/uploads/2016/11/project.png';
 				include(get_template_directory() . '/category-tile.php');
 
 				$category_name = 'Communicatie';
-				$category_image_url = '/energiearmoede/wp-content/uploads/2016/11/materials.png';
+				$category_image_url = '/energiearmoede/wp-content/uploads/2016/11/project.png';
 				include(get_template_directory() . '/category-tile.php');
 
 				$category_name = 'Stories';
-				$category_image_url = '/energiearmoede/wp-content/uploads/2016/11/materials.png';
+				$category_image_url = '/energiearmoede/wp-content/uploads/2016/11/project.png';
 				include(get_template_directory() . '/category-tile.php');
 				?>
 

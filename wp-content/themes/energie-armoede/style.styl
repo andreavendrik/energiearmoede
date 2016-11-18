@@ -113,7 +113,6 @@ p
 
 #mobile-navigation
   display none
-  margin-top 50px
 
 @media only screen and (max-width:breakpoint3)
   #mobile-navigation
@@ -306,14 +305,17 @@ p
     a
       color blue
   h2
-    headingfont(27px,200)
+    headingfont(33px,200,32px)
   article
     margin-top 10px
+@media only screen and (max-width:breakpoint3)
+  #category-header
+    padding 150px 20px 20px 38px
 
 .general-content
   display flex
   flex-wrap wrap
-  justify-content space-between
+  justify-content space-around
   width 100%
   position relative
   box-sizing border-box
@@ -322,6 +324,8 @@ p
     headingfont(45px,400)
   article
     max-width 700px
+    flex 3
+    margin-right 50px
     p
       bodyfont(18px, 30px)
       margin-top 20px
@@ -329,14 +333,32 @@ p
         margin-top:40px
 
 #category-content
-  padding 75px 125px 20px 125px
+  padding 75px 125px
 
 #page-content
-  padding 25px 75px 25px 75px
+  padding 25px 125px
+
+@media only screen and (max-width:breakpoint1)
+  .general-content
+      article
+        flex none
+        width 100%
+
+@media only screen and (max-width:breakpoint2)
+  .general-content
+    display block
+  #category-content
+    padding 50px 75px
+  #page-content
+    padding 50px 75px
+
+@media only screen and (max-width:breakpoint3)
+  #category-content
+    padding 50px 38px
+  #page-content
+    padding 50px 38px
 
 aside
-  max-width 250px
-  margin-right 20px
   headingfont(18px,,30px)
   ul
     list-style-type decimal
@@ -344,9 +366,15 @@ aside
     margin-top 40px
 
 #prev-next-post-nav
-  padding 10px 125px
+  padding 10px 75px
   display flex
   justify-content space-between
+  h4
+    margin-bottom 0px
+
+@media only screen and (max-width:breakpoint3)
+  #prev-next-post-nav
+    padding 10px 38px
 
 #prev-post-nav
   svg
