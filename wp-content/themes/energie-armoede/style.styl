@@ -288,11 +288,17 @@ p
   background-color #B2CDD5
 
 #page-header
-  padding 150px 20px 20px 100px
+  padding 150px 25px 25px 125px
   position relative
   h1
     position absolute
     bottom 40px
+@media only screen and (max-width:breakpoint2)
+  #page-header
+    padding 75px
+@media only screen and (max-width:breakpoint3)
+  #page-header
+    padding 75px 38px
 
 #category-header
   padding 150px 20px 20px 75px
@@ -313,9 +319,6 @@ p
     padding 150px 20px 20px 38px
 
 .general-content
-  display flex
-  flex-wrap wrap
-  justify-content space-around
   width 100%
   position relative
   box-sizing border-box
@@ -334,6 +337,9 @@ p
 
 #category-content
   padding 75px 125px
+  display flex
+  flex-wrap wrap
+  justify-content space-around
 
 #page-content
   padding 25px 125px
