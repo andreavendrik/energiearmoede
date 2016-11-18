@@ -1,34 +1,30 @@
 // out: style.css, sourcemap: true, compress: true
 yellow = #fdea4d
 blue = #005A73
-bluemiddle = #005A73
-bluelight = #005A73
+bluemiddle = #80ACB9
+bluelight = #E5EEF1
 black = #1E1E1E
-broodtekstfont(font-size=16px,line-height=22px)
+broodtekstfont(font-size=16px, line-height=22px)
   font-size font-size
   line-height line-height
   font-family adelle sans, sans-serif
   font-weight 300
   color black
 
-kopfont(font-size=40px, font-weight=400)
+kopfont(font-size=40px, font-weight=200)
   font-family bree serif, sans-serif
   font-weight font-weight
   font-size font-size
   color black
 
-bodytext()
-  broodtekstfont()
-
-posttitle()
-  kopfont(30px)
-
-categorytitle()
-  posttitle(30px)
-
 *
   padding 0
   margin 0
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+body
+  background-color bluelight
 
 a
   color blue
@@ -37,16 +33,18 @@ a
     transition 0.3s
 
 h1
-  posttitle()
+  kopfont(40px, 400)
+  color white
 
 h2
-  categorytitle()
+  kopfont(30px)
 
 h3
-  posttitle(font-size=20px)
-  font-weight 200
+  kopfont(25px, 200)
+  line-height 35px
   margin-top 30px
   margin-bottom 50px
+  color white
 
 h2 a
   text-decoration: none
@@ -64,6 +62,7 @@ p
   max-width 1100px
   margin-left auto
   margin-right auto
+  position relative
 
 .navigation
   kopfont(18px,200)
@@ -80,6 +79,7 @@ p
   box-shadow 0px 0px 5px 1px rgba(30,30,30,0.2)
   a
     text-decoration none
+    color black
 
 #navigation-items
   width 1100px
@@ -91,18 +91,7 @@ p
     box-shadow 0px 0px 5px 1px rgba(30,30,30,0.2)
     position absolute
     top 0
-    margin-left 20px
-
-.category-data
-  &:before
-    content ''
-    width 30px
-    height 30px
-    background-color white
-    position absolute
-    top 0px
-    left -15px
-    transform rotate(45deg)
+    margin-left 50px
 
 .menu-default-menu-container
   ul
@@ -110,18 +99,19 @@ p
     display flex
     justify-content flex-end
     li
-      margin-left 15px
+      margin-left 40px
 
 .index-header
   width 100%
-  background-image url('/energiearmoede/wp-content/uploads/2016/11/headerbeeld.jpg')
+  background-image url('/energiearmoede/wp-content/uploads/2016/11/photo-1462003627669-87bee17e0b4e-1.jpeg')
   background-size cover
   background-position center
-  height 70vh
+  height 85vh
   position relative
 
 .header-title
   position absolute
+  max-width 500px
   bottom 30px
   left 50px
 
@@ -134,6 +124,7 @@ p
   box-sizing border-box
   align-items center
   display flex
+  background-color white
   a
     width 50%
     height 100%
@@ -143,6 +134,10 @@ p
 
 .category-tile:nth-of-type(3), .category-tile:nth-of-type(4)
   flex-direction row-reverse
+  .category-data
+    &:before
+      right -15px
+      left auto
 
 .category-data
   text-align center
@@ -150,7 +145,28 @@ p
   padding 20px
   box-sizing border-box
   position relative
+  &:before
+    content ''
+    width 30px
+    height 30px
+    background-color white
+    position absolute
+    top 0px
+    left -15px
+    transform rotate(45deg)
+  p
+    broodtekstfont()
+
 
 #category-header
-  height 200px
+  min-height 200px
   max-width 100%
+  width 1100px
+  padding 150px 20px 20px 50px
+  box-sizing border-box
+  background-color white
+
+#content
+  position relative
+  width 100%
+  background-color red
