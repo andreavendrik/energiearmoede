@@ -24,7 +24,6 @@ kopfont(font-size=40px, font-weight=200)
   -moz-osx-font-smoothing: grayscale;
 
 body
-  background-color bluelight
 
 a
   color blue
@@ -34,17 +33,17 @@ a
 
 h1
   kopfont(40px, 400)
-  color white
+  color black
 
 h2
-  kopfont(30px)
+  kopfont(35px)
 
 h3
   kopfont(25px, 200)
   line-height 35px
   margin-top 30px
   margin-bottom 50px
-  color white
+  color black
 
 h2 a
   text-decoration: none
@@ -55,17 +54,20 @@ h4
   broodtekstfont(12px,12px)
   margin 10px 0px 25px 0px
 
+article
+  broodtekstfont()
+
 p
-  bodytext()
+  broodtekstfont()
 
 .site-wrapper
-  max-width 1100px
+  max-width 1280px
   margin-left auto
   margin-right auto
   position relative
 
 .navigation
-  kopfont(18px,200)
+  kopfont(16px,200)
   position fixed
   height 60px
   z-index 999
@@ -79,11 +81,10 @@ p
   box-shadow 0px 0px 5px 1px rgba(30,30,30,0.2)
   a
     text-decoration none
-    color black
 
 #navigation-items
-  width 1100px
-  max-width 100%
+  max-width 1280px
+  width 100%
   margin auto
   img
     width 190px
@@ -114,6 +115,10 @@ p
   max-width 500px
   bottom 30px
   left 50px
+  h1
+    color white
+  h3
+    color white
 
 .categories
   display flex
@@ -136,7 +141,7 @@ p
   flex-direction row-reverse
   .category-data
     &:before
-      right -15px
+      right -20px
       left auto
 
 .category-data
@@ -147,12 +152,12 @@ p
   position relative
   &:before
     content ''
-    width 30px
-    height 30px
+    width 40px
+    height 40px
     background-color white
     position absolute
     top 0px
-    left -15px
+    left -20px
     transform rotate(45deg)
   p
     broodtekstfont()
@@ -161,12 +166,57 @@ p
 #category-header
   min-height 200px
   max-width 100%
-  width 1100px
   padding 150px 20px 20px 50px
   box-sizing border-box
-  background-color white
+  background-color #B2CDD5
+  background-position right top
+  background-size contain
+  background-repeat no-repeat
+  h4
+    text-transform lowercase
+    kopfont(14px)
+    a
+      color black
+  h2
+    kopfont(25px)
+    font-weight 600
+  article
+    margin-top 10px
 
 #content
   position relative
+  display flex
+  flex-wrap wrap
+  justify-content space-between
+  box-sizing border-box
   width 100%
-  background-color red
+  padding 75px 100px 20px 100px
+  background-color white
+  h1
+    kopfont(45px,400)
+  article
+    max-width 700px
+    p
+      broodtekstfont(18px, 30px)
+      margin-top 20px
+      &:first-of-type
+        margin-top:40px
+
+aside
+  max-width 250px
+  margin-right 20px
+  kopfont(18px)
+  line-height 26px
+  ul
+    list-style-type decimal
+    list-style-position inside
+    margin-top 40px
+
+#prev-next-post-nav
+  padding 10px 100px
+  display flex
+  justify-content space-between
+
+#prev-post-nav
+  svg
+    transform rotate(180deg)
