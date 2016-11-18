@@ -71,7 +71,7 @@ p
   position fixed
   height 60px
   z-index 999
-  background-color white
+  background-color rgba(255,255,255,0.9)
   display flex
   width 100%
   left 0
@@ -100,7 +100,7 @@ p
     display flex
     justify-content flex-end
     li
-      margin-left 40px
+      margin-right 40px
 
 .index-header
   width 100%
@@ -162,13 +162,21 @@ p
   p
     broodtekstfont()
 
-
-#category-header
-  min-height 200px
+.general-header
+  min-height 300px
   max-width 100%
-  padding 150px 20px 20px 50px
   box-sizing border-box
   background-color #B2CDD5
+
+#page-header
+  padding 150px 20px 20px 100px
+  position relative
+  h1
+    position absolute
+    bottom 40px
+
+#category-header
+  padding 150px 20px 20px 50px
   background-position right top
   background-size contain
   background-repeat no-repeat
@@ -178,19 +186,17 @@ p
     a
       color black
   h2
-    kopfont(25px)
-    font-weight 600
+    kopfont(25px,400)
   article
     margin-top 10px
 
-#content
-  position relative
+.general-content
   display flex
   flex-wrap wrap
   justify-content space-between
-  box-sizing border-box
   width 100%
-  padding 75px 100px 20px 100px
+  position relative
+  box-sizing border-box
   background-color white
   h1
     kopfont(45px,400)
@@ -201,6 +207,12 @@ p
       margin-top 20px
       &:first-of-type
         margin-top:40px
+
+#category-content
+  padding 75px 100px 20px 100px
+
+#page-content
+  padding 25px 100px 20px 100px  
 
 aside
   max-width 250px
@@ -220,3 +232,13 @@ aside
 #prev-post-nav
   svg
     transform rotate(180deg)
+
+.footer
+  background-color bluelight
+  text-align center
+  width 100%
+  color white
+  min-height 200px
+  p
+    kopfont(18px)
+    padding-top 50px

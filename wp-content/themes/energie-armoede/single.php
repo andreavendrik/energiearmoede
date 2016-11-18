@@ -16,7 +16,7 @@ $prev_post = get_adjacent_post($post->ID);
 
 ?>
 
-<header id="category-header" style="background-image:url('<?php echo z_taxonomy_image_url($category->term_id); ?>')" />
+<header id="category-header" class="general-header" style="background-image:url('<?php echo z_taxonomy_image_url($category->term_id); ?>')" />
 	<h4><a href="<?php echo get_bloginfo('url'); ?>">< terug naar overzicht</a></h4>
 	<h2>Categorie: <?php echo $category->name; ?></h2>
 	<article><?php echo $category->description; ?></article>
@@ -44,18 +44,16 @@ $prev_post = get_adjacent_post($post->ID);
 	</div>
 </nav>
 
-<main id="content">
+<main class="general-content" id="category-content">
 
-	<article id="main-content">
-
+	<article>
 		<h1><?php echo $post->post_title; ?></h1>
-		<article>
-
+		<div>
 			<?php
-				$some_long_text =  $post->post_content;
-				echo wpautop( $some_long_text );
+				$auto_paragraphs =  $post->post_content;
+				echo wpautop( $auto_paragraphs );
 				?>
-		</article>
+		</div>
 	</article>
 
 	<aside id="content-navigation">
