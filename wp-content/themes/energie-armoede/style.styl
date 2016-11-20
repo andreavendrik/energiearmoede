@@ -42,7 +42,7 @@ h1
   color black
 
 h2
-  headingfont(33px)
+  headingfont(36px)
 
 h2 a
   text-decoration: none
@@ -88,6 +88,11 @@ p
   a
     text-decoration none
 
+@media only screen and (max-width:breakpoint4)
+  .navigation
+      position absolute
+      top 0
+
 #navigation-items, #navigation-items-mobile
   max-width 1440px
   width 100%
@@ -109,7 +114,7 @@ p
 @media only screen and (max-width:breakpoint4)
   #navigation-items-mobile
     img
-      width 150px
+      width 125px
 
 #mobile-navigation
   display none
@@ -138,7 +143,6 @@ p
     display inline
     headingfont(32px)
 
-
 #mobile-menu-button
   position absolute
   right 20px
@@ -157,14 +161,20 @@ p
   background-image url('/energiearmoede/wp-content/uploads/2016/11/photo-1462003627669-87bee17e0b4e-1.jpeg')
   background-size cover
   background-position center
-  height 85vh
+  min-height 650px
   position relative
+  display flex
+  align-items flex-end
+  box-sizing border-box
+  padding 0px 25px 50px 75px
+
+@media only screen and (max-width:breakpoint3)
+  .index-header
+    padding 0px 25px 50px 38px
+
 
 .header-title
-  position absolute
   max-width 500px
-  bottom 30px
-  left 75px
   h1
     color white
   h3
@@ -274,12 +284,13 @@ p
 @media only screen and (max-width:breakpoint3)
   .category-data
     width 100%
-    height 200px
+    min-height 250px
     h2
-      margin-top 20px
+      margin-top 25px
       headingfont()
     p
       bodyfont()
+      margin-bottom 25px
 
 .general-header
   min-height 350px
@@ -311,7 +322,7 @@ p
     a
       color blue
   h2
-    headingfont(33px,200,32px)
+    headingfont(36px,200,32px)
   article
     margin-top 10px
 @media only screen and (max-width:breakpoint3)
@@ -328,7 +339,7 @@ p
   article
     max-width 700px
     flex 3
-    margin-right 50px
+    margin 0px 50px 50px 0px
     p
       bodyfont(18px, 30px)
       margin-top 20px
@@ -336,10 +347,10 @@ p
         margin-top:40px
 
 #category-content
-  padding 75px 125px
+  padding 75px
   display flex
   flex-wrap wrap
-  justify-content space-around
+  justify-content space-between
 
 #page-content
   padding 25px 125px
