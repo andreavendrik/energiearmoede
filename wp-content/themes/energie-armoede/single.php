@@ -23,8 +23,9 @@ $prev_post = get_adjacent_post($post->ID);
 ?>
 
 <header id="category-header" class="general-header" style="background-image:url('<?php echo z_taxonomy_image_url($category->term_id); ?>')" />
-	<h4><a href="<?php echo get_bloginfo('url'); ?>">< terug naar overzicht</a></h4>
+	<!-- <h4><a href="<?php echo get_bloginfo('url'); ?>">< terug naar overzicht</a></h4> -->
 	<h2>Categorie: <?php echo $category->name; ?></h2>
+	<article><?php echo $category->description; ?></article>
 </header>
 
 <main class="general-content" id="category-content">
@@ -32,7 +33,6 @@ $prev_post = get_adjacent_post($post->ID);
 <!-- List of articles in same category -->
 
 	<aside id="content-navigation">
-		<div><?php echo $category->description; ?></div>
 		<ul id="related-posts">
 			<?php foreach($related_posts as $related_post): ?>
 				<li>
