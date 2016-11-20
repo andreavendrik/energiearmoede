@@ -312,7 +312,10 @@ p
     padding 75px 38px
 
 #category-header
-  padding 200px 20px 20px 75px
+  padding 200px 25px 25px 75px
+  display flex
+  justify-content flex-end
+  flex-direction column
   background-position right top
   background-size contain
   background-repeat no-repeat
@@ -323,8 +326,6 @@ p
       color blue
   h2
     headingfont(36px,200,32px)
-  article
-    margin-top 10px
 @media only screen and (max-width:breakpoint3)
   #category-header
     padding 150px 20px 20px 38px
@@ -336,6 +337,7 @@ p
   background-color white
   h1
     headingfont(45px,400)
+    margin-top 60px
   article
     max-width 700px
     flex 3
@@ -347,7 +349,7 @@ p
         margin-top:40px
 
 #category-content
-  padding 75px
+  padding 0px 75px 0px 50px
   display flex
   flex-wrap wrap
   justify-content space-between
@@ -377,13 +379,21 @@ p
 
 aside
   headingfont(18px,,30px)
+  background-color bluelight
+  height 100%
+  max-width 275px
+  padding 25px 25px 25px 25px
+  box-sizing padding-box
+  margin-right 25px
   ul
     list-style-type decimal
     list-style-position inside
-    margin-top 40px
+  div
+    bodyfont(18px,30px)
+    margin-bottom 15px
 
 #prev-next-post-nav
-  padding 10px 75px
+  padding 10px 0px
   display flex
   justify-content space-between
   h4
