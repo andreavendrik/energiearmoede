@@ -32,7 +32,7 @@ function toggleMobileMenu(id) {
 
 				<div id="navigation-items-mobile">
 						<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
-							<img src="/energiearmoede/wp-content/uploads/2016/11/ea_logo.svg">
+							<img src="<?php echo get_bloginfo('siteurl');?>/wp-content/uploads/2016/11/ea_logo.svg">
 						</a>
 
 						<div id="mobile-menu-button" onclick="toggleMobileMenu('mobile-menu')">
@@ -48,7 +48,7 @@ function toggleMobileMenu(id) {
 			<nav id="site-navigation" class="navigation" role="navigation">
 				<div id="navigation-items">
 						<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
-							<img src="/energiearmoede/wp-content/uploads/2016/11/ea_logo.svg">
+							<img src="<?php echo get_bloginfo('siteurl'); ?>/wp-content/uploads/2016/11/ea_logo.svg">
 						</a>
 
 					<?php wp_nav_menu( array(

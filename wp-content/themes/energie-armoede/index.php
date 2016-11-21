@@ -28,19 +28,19 @@ $recent_posts = wp_get_recent_posts( $args, ARRAY_A );
 
 				<?php
 				$category_name = 'Project opzet';
-				$category_image_url = '/energiearmoede/wp-content/uploads/2016/11/project.png';
+				$category_image_url = get_bloginfo('siteurl') . '/wp-content/uploads/2016/11/project.png';
 				include(get_template_directory() . '/category-tile.php');
 
 				$category_name = 'Materialen';
-				$category_image_url = '/energiearmoede/wp-content/uploads/2016/11/project.png';
+				$category_image_url = get_bloginfo('siteurl') . '/wp-content/uploads/2016/11/project.png';
 				include(get_template_directory() . '/category-tile.php');
 
 				$category_name = 'Communicatie';
-				$category_image_url = '/energiearmoede/wp-content/uploads/2016/11/project.png';
+				$category_image_url = get_bloginfo('siteurl') . '/wp-content/uploads/2016/11/project.png';
 				include(get_template_directory() . '/category-tile.php');
 
 				$category_name = 'Stories';
-				$category_image_url = '/energiearmoede/wp-content/uploads/2016/11/project.png';
+				$category_image_url = get_bloginfo('siteurl') . '/wp-content/uploads/2016/11/project.png';
 				include(get_template_directory() . '/category-tile.php');
 				?>
 
