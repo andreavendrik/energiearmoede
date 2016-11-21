@@ -12,11 +12,11 @@ $post = get_post();
 $categories = get_the_category($post->ID);
 $category = $categories[0];
 
-$related_posts = get_posts([
+$related_posts = get_posts(array(
 	"category_name" => $category->name,
 	"offset" => 0,
 	"posts_per_page" => -1
-]);
+));
 
 $next_post = get_next_post($post->ID);
 $prev_post = get_adjacent_post($post->ID);

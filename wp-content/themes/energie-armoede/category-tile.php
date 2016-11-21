@@ -1,11 +1,11 @@
 <?php
 $category_id = get_cat_ID( $category_name );
 $category_link = get_category_link( $category_id );
-$category_posts = get_posts([
+$category_posts = get_posts(array(
   'category_name' => $category_name,
   'posts_per_page' => -1,
   'order' => 'ASC'
-]);
+));
 $most_recent_post_in_category = $category_posts[0];
 ?>
 

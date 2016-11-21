@@ -5,12 +5,12 @@ $post = get_post();
 $categories = get_the_category($post->ID);
 $category = $categories[0];
 
-$related_posts = get_posts([
+$related_posts = get_posts(array(
 	"category_name" => $category->name,
 	"offset" => 0,
 	"posts_per_page" => -1,
 	"order" => "ASC"
-]);
+));
 
 $post_no = 0;
 foreach($related_posts as $key => $related_post):
