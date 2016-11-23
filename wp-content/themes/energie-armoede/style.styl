@@ -12,12 +12,12 @@ breakpoint4 = 480px
 bodyfont(font-size=16px, line-height=22px)
   font-size font-size
   line-height line-height
-  font-family adelle sans, sans-serif
+  font-family adelle-sans, 'Roboto', sans-serif
   font-weight 300
   color black
 
 headingfont(font-size=40px, font-weight=200, line-height=50px)
-  font-family bree serif, sans-serif
+  font-family bree-serif, 'Bitter', sans-serif
   font-weight font-weight
   font-size font-size
   line-height line-height
@@ -172,6 +172,7 @@ p
   position relative
   box-sizing border-box
   padding 0px 25px 50px 75px
+  margin-bottom 15px
 
 @media only screen and (max-width:breakpoint3)
   .index-header
@@ -213,8 +214,8 @@ p
   flex-wrap wrap
   background-color bluelight
 
-.category-tile:nth-of-type(-n+2)
-  margin-top 15px
+// .category-tile:nth-of-type(-n+2)
+//   margin-top 15px
 
 .category-tile:nth-of-type(odd)
   margin-left 15px
@@ -471,7 +472,7 @@ aside
 // footer styling
 
 .footer
-  background-color bluelight
+  background-color white
   text-align center
   width 100%
   color white
