@@ -98,6 +98,14 @@ p
       position absolute
       top 0
 
+.menu-default-menu-container
+  ul
+    list-style none
+    display flex
+    justify-content flex-end
+    li
+      margin-right 40px
+
 #navigation-items, #navigation-items-mobile
   max-width 1440px
   width 100%
@@ -111,10 +119,15 @@ p
     top 0
     margin-left 75px
 
+@media only screen and (min-width:1440px)
+  #navigation-items, #navigation-items-mobile
+    img
+      margin-left 25px
+
 @media only screen and (max-width:breakpoint3)
   #navigation-items-mobile
     img
-      margin-left 38px
+      margin-left 25px
 
 @media only screen and (max-width:breakpoint4)
   #navigation-items-mobile
@@ -137,8 +150,9 @@ p
   height 100vh
   text-align center
   background-color blue
+  opacity 0.95
   position absolute
-  top 60px
+  top 55px
   padding-top 150px
   a
     color white
@@ -146,20 +160,14 @@ p
   ul
     top 150px
     display inline
-    headingfont(32px)
+    headingfont(28px)
+    li
+      margin-right 0px
 
 #mobile-menu-button
   position absolute
   right 20px
   top 15px
-
-.menu-default-menu-container
-  ul
-    list-style none
-    display flex
-    justify-content flex-end
-    li
-      margin-right 40px
 
 //header on homepage
 
@@ -168,21 +176,23 @@ p
   background-image url('../../../wp-content/uploads/2016/11/photo-1462003627669-87bee17e0b4e-1.jpeg')
   background-size cover
   background-position center
-  min-height 650px
-  position relative
+  min-height 550px
   box-sizing border-box
+  position relative
   padding 0px 25px 50px 75px
   margin-bottom 15px
 
 @media only screen and (max-width:breakpoint3)
   .index-header
-    padding 0px 25px 50px 38px
+    padding 0px 25px 50px 25px
+    min-height 80vh
 
 .header-title
   max-width 1440px
   margin auto
   display flex
-  min-height 650px
+  min-height 550px
+  box-sizing border-box
   justify-content flex-end
   flex-direction column
   h1
@@ -193,7 +203,17 @@ p
 
 @media only screen and (max-width:breakpoint3)
   .header-title
-    left 38px
+    min-height 80vh
+    h1
+      headingfont(36px,400,42px)
+      color white
+      margin-top 100px
+      text-shadow 0px 0px 5px rgba(30,30,30,0.3)
+    h3
+      headingfont(22px,,30px)
+      color white
+      margin-bottom 0px
+      text-shadow 0px 0px 5px rgba(30,30,30,0.3)
 
 // category tiles
 
@@ -205,14 +225,26 @@ p
 
 .category-tile
   width calc(50% - 30px)
-  height auto
   margin-right 15px
   margin-bottom 15px
   box-sizing border-box
-  align-items center
+  align-items stretch
   display flex
   flex-wrap wrap
   background-color bluelight
+  &:hover
+    .category-data
+      background-color #bed8e0
+      h2
+        color blue
+        -webkit-animation h2moveup 0.2s 1
+        animation h2moveup 0.2s 1
+        -webkit-animation-fill-mode forwards
+        animation-fill-mode forwards
+      &:before
+        background-color #bed8e0
+    .category-image
+      opacity 0.9
 
 .category-tile:nth-of-type(odd)
   margin-left 15px
@@ -277,15 +309,13 @@ p
   flex-direction column
   justify-content center
   background-color bluelight
+  a
+    text-decoration none
   h2
-    margin -5px 10px
+    line-height 36px
+    padding 5px 10px
     overflow: hidden;
     text-overflow: ellipsis;
-    &:hover
-      -webkit-animation h2moveup 0.5s 1
-      animation h2moveup 0.5s 1
-      -webkit-animation-fill-mode forwards
-      animation-fill-mode forwards
   &:before
     content ''
     width 40px
@@ -309,7 +339,7 @@ p
 @media only screen and (max-width:breakpoint1)
   .category-data
     h2
-      headingfont(28px,,36px)
+      headingfont(28px,,28px)
     p
       bodyfont(14px,20px)
 
@@ -323,18 +353,18 @@ p
 @media only screen and (max-width:660px)
   .category-data
     h2
-      headingfont(28px,,36px)
+      headingfont(28px,,28px)
     p
       bodyfont(14px,20px)
 
 @media only screen and (max-width:breakpoint3)
   .category-data
     width 100%
-    min-height 250px
+    min-height 200px
     height auto
     h2
-      margin-top 25px
-      headingfont()
+      margin-top 15px
+      headingfont(32px)
     p
       bodyfont()
       margin-bottom 25px
@@ -360,7 +390,7 @@ p
     padding 75px
 @media only screen and (max-width:breakpoint3)
   #page-header
-    padding 75px 38px
+    padding 75px 25px
 
 // header for article page
 
@@ -380,9 +410,15 @@ p
     max-width 500px
   h4
     margin-bottom 5px
+
 @media only screen and (max-width:breakpoint3)
   #article-header
-    padding 150px 20px 20px 38px
+    padding 150px 20px 20px 25px
+
+@media only screen and (max-width:breakpoint4)
+  #article-header
+      article
+        bodyfont(16px,24px)
 
 // article styling
 
@@ -398,11 +434,27 @@ p
     max-width 650px
     flex 3
     margin 0px 0px 50px 0px
+    blockquote
+      width 90%
+      margin-left 50px
+      padding 15px 0px
+      p
+        headingfont(36px,200,48px)
+        text-align left
+        color blue
     p
       bodyfont(18px, 30px)
       margin-top 20px
       &:first-of-type
         margin-top:25px
+
+@media only screen and (max-width:breakpoint4)
+  .general-content
+    h1
+      headingfont(40px,400,42px)
+      margin-top 50px
+    article
+      margin 0px
 
 #article-content
   padding 0px 50px 0px 50px
@@ -422,14 +474,38 @@ p
 
 @media only screen and (max-width:breakpoint3)
   #article-content
-    padding 0px 50px 38px 50px
+    padding 0px 25px
   #page-content
-    padding 50px 38px
+    padding 50px 25px
+
+@media only screen and (max-width:breakpoint4)
+  #article-content
+    padding 0px
+    article
+      padding 0px 25px
 
 #article-introduction
   p
     headingfont(23px,,32px)
     margin-top 40px
+
+@media only screen and (max-width:breakpoint4)
+  #article-introduction
+    p
+      headingfont(21px,,28px)
+      margin-top 25px
+  #article-text
+    p
+      bodyfont(16px,26px)
+    blockquote
+      width 90%
+      padding 15px 0px 5px
+      margin-left 25px
+      p
+        headingfont(32px,200,40px)
+        text-align left
+        color blue
+        margin 0px
 
 // sidebar with article list on article page
 
@@ -461,6 +537,10 @@ aside
     width 100%
     margin-right 0px
 
+@media only screen and (max-width:breakpoint4)
+  aside
+    h4
+      margin-top 25px
 
 // additional navigation between articles
 
@@ -473,7 +553,7 @@ aside
 
 @media only screen and (max-width:breakpoint3)
   #prev-next-post-nav
-    padding 10px 38px
+    padding 10px 25px
 
 #prev-post-nav
   svg
@@ -482,13 +562,22 @@ aside
 // footer styling
 
 .footer
-  background-color white
+  background-color rgba(0,0,0,0.05)
+  margin-top 25px
   text-align center
   width 100%
   color white
   min-height 200px
+  padding 25px
+  box-sizing border-box
   p
     headingfont(24px,,32px)
     padding-top 50px
   span
     headingfont(24px,400,32px)
+
+@media only screen and (max-width:breakpoint3)
+  .footer
+    margin-top 0px
+    p
+      padding-top 10px

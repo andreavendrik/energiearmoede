@@ -17,8 +17,8 @@ $recent_posts = wp_get_recent_posts( $args, ARRAY_A );
 
 		<header class="index-header">
 			<div class="header-title">
-				<h1><?php echo get_bloginfo('name') ?></h1>
-				<h3><?php echo get_bloginfo('description') ?></h3>
+				<div><h1><?php echo get_bloginfo('name') ?></h1></div>
+				<div><h3><?php echo get_bloginfo('description') ?></h3></div>
 			</div>
 		</header>
 

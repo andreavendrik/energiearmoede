@@ -47,8 +47,6 @@ $prev_post = get_adjacent_post($post->ID);
 
 	<article>
 
-	
-
 		<!-- Content of article -->
 
 		<h1><?php echo $post->post_title; ?></h1>
