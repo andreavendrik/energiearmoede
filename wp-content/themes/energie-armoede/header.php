@@ -25,7 +25,6 @@ function toggleMobileMenu(id) {
 	<header class="site-header">
 			<nav id="mobile-navigation" class="navigation" role="navigation">
 
-
 				<div id="mobile-menu">
 					<?php wp_nav_menu( array(
 						'theme_location' => 'primary',

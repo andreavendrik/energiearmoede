@@ -24,7 +24,9 @@ $prev_post = get_adjacent_post($post->ID);
 ?>
 
 <header id="page-header" class="general-header" style="background-image:url('<?php echo z_taxonomy_image_url($category->term_id); ?>')" />
-	<h1><?php echo get_the_title() ?></h1>
+	<div class="general-header-content">
+		<h1><?php echo get_the_title() ?></h1>
+	</div>
 </header>
 
 <main class="general-content" id="page-content">

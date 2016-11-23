@@ -192,6 +192,7 @@ p
   margin auto
   display flex
   min-height 550px
+  height 550px
   box-sizing border-box
   justify-content flex-end
   flex-direction column
@@ -378,10 +379,16 @@ p
   box-sizing border-box
   background-color #B2CDD5
 
+.general-header-content
+  width 1440px
+  max-width 100%
+  margin auto
+  box-sizing border-box
+
 // header for 'regular' page
 
 #page-header
-  padding 150px 25px 25px 125px
+  padding 150px 25px 30px 125px
   position relative
   h1
     position absolute
@@ -424,10 +431,11 @@ p
 // article styling
 
 .general-content
-  width 100%
+  max-width 1440px
   position relative
   box-sizing border-box
   background-color white
+  margin auto
   h1
     headingfont(45px,400)
     margin-top 75px
@@ -458,12 +466,18 @@ p
       margin 0px
 
 #article-content
-  padding 0px 50px 0px 50px
+  padding 0px 50px
   display flex
   flex-wrap wrap
 
 #page-content
   padding 25px 125px
+
+@media only screen and (min-width 1440px)
+  #article-content
+    padding 0px
+  #page-content
+    padding-left 50px
 
 @media only screen and (max-width:breakpoint2)
   .general-content
