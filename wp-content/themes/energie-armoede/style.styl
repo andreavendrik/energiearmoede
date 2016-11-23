@@ -30,12 +30,13 @@ headingfont(font-size=40px, font-weight=200, line-height=50px)
   -moz-osx-font-smoothing: grayscale;
 
 body
+  background-color white
 
 a
   color blue
+  transition 0.3s
   &:hover
     color bluemiddle
-    transition 0.1s
 
 h1
   headingfont(42px, 400)
@@ -66,25 +67,29 @@ article
 p
   bodyfont()
 
+// wrapper around website
+
 .site-wrapper
-  max-width 1440px
+  max-width 100%
   margin-left auto
   margin-right auto
   position relative
 
+// menu
+
 .navigation
   headingfont(18px,200,24px)
   position fixed
-  height 60px
+  height 55px
   z-index 100
-  background-color rgba(255,255,255,0.95)
+  background-color rgba(255,255,255,1)
   display flex
   width 100%
   left 0
   justify-content space-between
   align-items center
   box-sizing border-box
-  box-shadow 0px 0px 5px 1px rgba(30,30,30,0.2)
+  box-shadow 0px 0px 3px 1px rgba(30,30,30,0.2)
   a
     text-decoration none
 
@@ -99,9 +104,9 @@ p
   margin auto
   z-index 999
   img
-    width 190px
+    width 180px
     border 1 px solid black
-    box-shadow 0px 0px 5px 1px rgba(30,30,30,0.2)
+    box-shadow 0px 0px 3px 1px rgba(30,30,30,0.2)
     position absolute
     top 0
     margin-left 75px
@@ -156,6 +161,8 @@ p
     li
       margin-right 40px
 
+//header on homepage
+
 .index-header
   width 100%
   background-image url('../../../wp-content/uploads/2016/11/photo-1462003627669-87bee17e0b4e-1.jpeg')
@@ -163,8 +170,6 @@ p
   background-position center
   min-height 650px
   position relative
-  display flex
-  align-items flex-end
   box-sizing border-box
   padding 0px 25px 50px 75px
 
@@ -172,43 +177,52 @@ p
   .index-header
     padding 0px 25px 50px 38px
 
-
 .header-title
-  max-width 500px
+  max-width 1440px
+  margin auto
+  display flex
+  min-height 650px
+  justify-content flex-end
+  flex-direction column
   h1
     color white
   h3
     color white
+    max-width 500px
 
 @media only screen and (max-width:breakpoint3)
   .header-title
     left 38px
 
+// category tiles
+
 .categories
+  max-width 1440px
+  margin auto
   display flex
   flex-wrap wrap
 
 .category-tile
-  width 50%
+  width calc(50% - 30px)
+  height auto
+  margin-right 15px
+  margin-bottom 15px
   box-sizing border-box
   align-items center
   display flex
   flex-wrap wrap
-  background-color white
+  background-color bluelight
 
-.category-image
-  width 50%
-  height 100%
-  img
-    width 100%
-    height 100%
+.category-tile:nth-of-type(-n+2)
+  margin-top 15px
 
-@media only screen and (max-width:breakpoint3)
-  .category-image
-    width 100%
-    height auto
+.category-tile:nth-of-type(odd)
+  margin-left 15px
 
-.category-tile:nth-of-type(3), .category-tile:nth-of-type(4)
+.category-tile:nth-of-type(even)
+  width calc(50% - 15px)
+
+.category-tile:nth-of-type(n+3)
   flex-direction row-reverse
   .category-data
     &:before
@@ -217,9 +231,14 @@ p
 
 @media only screen and (max-width:breakpoint2)
   .category-tile
-    width 100%
-  .category-tile:nth-of-type(2), .category-tile:nth-of-type(4)
+    width calc(100% - 30px)
+    margin-left auto
+    margin-right auto
+    margin-top 0px!important
+    margin-bottom 15px
+  .category-tile:nth-of-type(even)
     flex-direction row-reverse
+    width calc(100% - 30px)
     .category-data
       &:before
         right -20px
@@ -236,7 +255,19 @@ p
     .category-data
       &:before
         left calc(50% - 20px)!important
-        top -22px
+        top -20px
+
+.category-image
+  width 50%
+  height 100%
+  img
+    width 100%
+    height 100%
+
+@media only screen and (max-width:breakpoint3)
+  .category-image
+    width 100%
+    height auto
 
 .category-data
   text-align center
@@ -244,21 +275,38 @@ p
   padding 20px
   box-sizing border-box
   position relative
+  display flex
+  flex-direction column
+  justify-content center
+  background-color bluelight
   h2
-    margin 0px 10px
+    margin -5px 10px
     overflow: hidden;
     text-overflow: ellipsis;
+    &:hover
+      -webkit-animation h2moveup 0.5s 1
+      animation h2moveup 0.5s 1
+      -webkit-animation-fill-mode forwards
+      animation-fill-mode forwards
   &:before
     content ''
     width 40px
     height 40px
-    background-color white
+    background-color bluelight
     position absolute
-    top 0px
+    top 30px
     left -20px
     transform rotate(45deg)
   p
     bodyfont()
+
+@-webkit-keyframes h2moveup
+  0%
+    transform translateY(0)
+    -webkit-transform translateY(0)
+  100%
+    transform translateY(-3px)
+    -webkit-transform translateY(-1.5px)
 
 @media only screen and (max-width:breakpoint1)
   .category-data
@@ -285,6 +333,7 @@ p
   .category-data
     width 100%
     min-height 250px
+    height auto
     h2
       margin-top 25px
       headingfont()
@@ -292,11 +341,15 @@ p
       bodyfont()
       margin-bottom 25px
 
+//header with shared style for both article page & 'regular' page
+
 .general-header
   min-height 350px
   max-width 100%
   box-sizing border-box
   background-color #B2CDD5
+
+// header for 'regular' page
 
 #page-header
   padding 150px 25px 25px 125px
@@ -311,7 +364,9 @@ p
   #page-header
     padding 75px 38px
 
-#category-header
+// header for article page
+
+#article-header
   padding 200px 25px 25px 75px
   display flex
   justify-content flex-end
@@ -327,8 +382,10 @@ p
   h2
     headingfont(36px,200,32px)
 @media only screen and (max-width:breakpoint3)
-  #category-header
+  #article-header
     padding 150px 20px 20px 38px
+
+// article styling
 
 .general-content
   width 100%
@@ -377,6 +434,8 @@ p
   #page-content
     padding 50px 38px
 
+// sidebar with article list on article page
+
 aside
   headingfont(18px,,30px)
   background-color bluelight
@@ -392,6 +451,8 @@ aside
     bodyfont(18px,30px)
     margin-bottom 15px
 
+// additional navigation between articles
+
 #prev-next-post-nav
   padding 10px 0px
   display flex
@@ -406,6 +467,8 @@ aside
 #prev-post-nav
   svg
     transform rotate(180deg)
+
+// footer styling
 
 .footer
   background-color bluelight

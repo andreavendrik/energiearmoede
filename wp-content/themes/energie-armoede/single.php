@@ -22,7 +22,7 @@ $prev_post = get_adjacent_post($post->ID);
 
 ?>
 
-<header id="category-header" class="general-header" style="background-image:url('<?php echo z_taxonomy_image_url($category->term_id); ?>')" />
+<header id="article-header" class="general-header" style="background-image:url('<?php echo z_taxonomy_image_url($category->term_id); ?>')" />
 	<!-- <h4><a href="<?php echo get_bloginfo('url'); ?>">< terug naar overzicht</a></h4> -->
 	<h2>Categorie: <?php echo $category->name; ?></h2>
 	<article><?php echo $category->description; ?></article>
