@@ -9,7 +9,7 @@ breakpoint2 = 860px
 breakpoint3 = 600px
 breakpoint4 = 480px
 
-bodyfont(font-size=16px, line-height=22px)
+bodyfont(font-size=18px, line-height=26px)
   font-size font-size
   line-height line-height
   font-family adelle-sans, 'Roboto', sans-serif
@@ -214,9 +214,6 @@ p
   flex-wrap wrap
   background-color bluelight
 
-// .category-tile:nth-of-type(-n+2)
-//   margin-top 15px
-
 .category-tile:nth-of-type(odd)
   margin-left 15px
 
@@ -368,20 +365,21 @@ p
 // header for article page
 
 #article-header
-  padding 200px 25px 25px 75px
+  padding 200px 25px 30px 75px
   display flex
   justify-content flex-end
   flex-direction column
   background-position right top
   background-size contain
   background-repeat no-repeat
-  h4
-    text-transform lowercase
-    headingfont(14px,,22px)
-    a
-      color blue
   h2
     headingfont(36px,200,32px)
+    margin-bottom 15px
+  article
+    bodyfont(18px,26px)
+    max-width 500px
+  h4
+    margin-bottom 5px
 @media only screen and (max-width:breakpoint3)
   #article-header
     padding 150px 20px 20px 38px
@@ -395,62 +393,74 @@ p
   background-color white
   h1
     headingfont(45px,400)
-    margin-top 60px
+    margin-top 75px
   article
-    max-width 700px
+    max-width 650px
     flex 3
-    margin 0px 50px 50px 0px
+    margin 0px 0px 50px 0px
     p
       bodyfont(18px, 30px)
       margin-top 20px
       &:first-of-type
-        margin-top:40px
+        margin-top:25px
 
-#category-content
-  padding 0px 75px 0px 50px
+#article-content
+  padding 0px 50px 0px 50px
   display flex
   flex-wrap wrap
-  justify-content space-between
 
 #page-content
   padding 25px 125px
 
-@media only screen and (max-width:breakpoint1)
-  .general-content
-      article
-        flex none
-        width 100%
-
 @media only screen and (max-width:breakpoint2)
   .general-content
     display block
-  #category-content
-    padding 50px 75px
+  #article-content
+    padding 0px 50px 75px 50px
   #page-content
     padding 50px 75px
 
 @media only screen and (max-width:breakpoint3)
-  #category-content
-    padding 50px 38px
+  #article-content
+    padding 0px 50px 38px 50px
   #page-content
     padding 50px 38px
+
+#article-introduction
+  p
+    headingfont(23px,,32px)
+    margin-top 40px
 
 // sidebar with article list on article page
 
 aside
-  headingfont(18px,,30px)
+  bodyfont(18px,26px)
   background-color bluelight
   height 100%
-  max-width 275px
-  padding 25px 25px 25px 25px
-  box-sizing padding-box
-  margin-right 25px
+  width 250px
+  padding 20px 25px 25px 25px
+  margin-right 75px
+  h4
+    margin 50px 0px 15px 0px
+  a
+    text-decoration none
   ul
     list-style-type decimal
     list-style-position inside
-  div
-    bodyfont(18px,30px)
-    margin-bottom 15px
+    li
+      margin-top 8px
+
+@media only screen and (max-width:breakpoint1)
+  aside
+    width 200px
+    bodyfont(16px,22px)
+    margin-right 50px
+
+@media only screen and (max-width:breakpoint2)
+  aside
+    width 100%
+    margin-right 0px
+
 
 // additional navigation between articles
 

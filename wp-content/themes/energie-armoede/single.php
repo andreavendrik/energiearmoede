@@ -23,16 +23,16 @@ $prev_post = get_adjacent_post($post->ID);
 ?>
 
 <header id="article-header" class="general-header" style="background-image:url('<?php echo z_taxonomy_image_url($category->term_id); ?>')" />
-	<!-- <h4><a href="<?php echo get_bloginfo('url'); ?>">< terug naar overzicht</a></h4> -->
-	<h2>Categorie: <?php echo $category->name; ?></h2>
+	<h2><?php echo $category->name; ?></h2>
 	<article><?php echo $category->description; ?></article>
 </header>
 
-<main class="general-content" id="category-content">
+<main class="general-content" id="article-content">
 
 <!-- List of articles in same category -->
 
 	<aside id="content-navigation">
+		<h4>Artikelen in deze categorie</h4>
 		<ul id="related-posts">
 			<?php foreach($related_posts as $related_post): ?>
 				<li>
@@ -47,40 +47,20 @@ $prev_post = get_adjacent_post($post->ID);
 
 	<article>
 
-		<nav id="prev-next-post-nav">
-			<div id="prev-post-nav">
-				<?php if($prev_post->ID): ?>
-					<a href="<?php echo get_permalink($prev_post->ID); ?>">
-						<svg width="15px" height="25px" viewBox="440 361 20 29" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-				    <polyline id="Page-1" stroke="#005A73" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none" points="442 388 456.018 376.203 442 364"></polyline>
-						</svg></a>
-				<?php endif; ?>
-			</div>
-
-			<!-- Current post display -->
-			<div id="current-post-nav">
-				<h4>Artikel <?php echo $post_no; ?>/<?php echo count($related_posts); ?></h4>
-			</div>
-
-			<!-- Next post button -->
-
-			<div id="next-post-nav">
-				<?php if($next_post->ID): ?>
-					<a href="<?php echo get_permalink($next_post->ID); ?>">
-						<svg width="15px" height="25px" viewBox="440 361 20 29" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-						<polyline id="Page-1" stroke="#005A73" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none" points="442 388 456.018 376.203 442 364"></polyline>
-					</a>
-				<?php endif; ?>
-			</div>
-		</nav>
+	
 
 		<!-- Content of article -->
 
-
 		<h1><?php echo $post->post_title; ?></h1>
-		<div>
+		<div id="article-introduction">
 			<?php
-				$auto_paragraphs =  $post->post_content;
+				$auto_paragraphs =  $post->introduction;
+				echo wpautop( $auto_paragraphs );
+				?>
+		</div>
+		<div id="article-text">
+			<?php
+				$auto_paragraphs =  $post->content;
 				echo wpautop( $auto_paragraphs );
 				?>
 		</div>
