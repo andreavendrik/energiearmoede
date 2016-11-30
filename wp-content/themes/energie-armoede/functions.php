@@ -132,3 +132,10 @@ class EnergieArmoedeThemeSetup {
 
 // Start the class and set as variable for child-theming
 $energie_armoede_theme_setup = new EnergieArmoedeThemeSetup;
+
+// Add extra menu
+
+function register_my_menu() {
+  register_nav_menu('secondary',__( 'Secondary' ));
+}
+add_action( 'init', 'register_my_menu' );

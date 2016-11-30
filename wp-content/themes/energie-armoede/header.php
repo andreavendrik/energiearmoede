@@ -12,6 +12,7 @@ function toggleMobileMenu(id) {
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="profile" href="http://gmpg.org/xfn/11">
 	<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
   <script src="https://use.typekit.net/nil6uze.js"></script>
   <script>try{Typekit.load({ async: true });}catch(e){}</script>
   <link href="https://fonts.googleapis.com/css?family=Bitter:400,700|Roboto:400,700" rel="stylesheet">
@@ -22,20 +23,25 @@ function toggleMobileMenu(id) {
 
 <div class="site-wrapper">
 
+<!-- Mobile Menu -->
+
 	<header class="site-header">
 			<nav id="mobile-navigation" class="navigation" role="navigation">
 
 				<div id="mobile-menu">
 					<?php wp_nav_menu( array(
-						'theme_location' => 'primary',
-						'menu_id'        => 'primary-menu',
+						'theme_location' => 'secondary',
 					) ); ?>
 				</div>
 
 				<div id="navigation-items-mobile">
+
+          <!-- Logo in mobile menu -->
 						<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
 							<img src="<?php echo get_bloginfo('siteurl');?>/wp-content/uploads/2016/11/ea_logo.svg">
 						</a>
+
+            <!-- Button in mobile menu -->
 
 						<div id="mobile-menu-button" onclick="toggleMobileMenu('mobile-menu')">
 							<svg width="31px" height="25px" viewBox="475 363 31 25" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
@@ -46,6 +52,8 @@ function toggleMobileMenu(id) {
 						</div>
 
 					</nav>
+
+<!-- Menu -->
 
 			<nav id="site-navigation" class="navigation" role="navigation">
 				<div id="navigation-items">
