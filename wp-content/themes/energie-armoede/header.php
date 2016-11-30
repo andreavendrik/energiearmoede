@@ -1,11 +1,5 @@
 <!DOCTYPE html>
 <html <?php language_attributes(); ?>>
-<script>
-function toggleMobileMenu(id) {
-    var div = document.getElementById(id);
-    div.style.display = div.style.display == "block" ? "none" : "block";
-}
-</script>
 
 <head>
 	<meta charset="<?php bloginfo( 'charset' ); ?>">
@@ -21,29 +15,31 @@ function toggleMobileMenu(id) {
 
 <body <?php body_class(); ?>>
 
-<div class="site-wrapper">
-
-<!-- Mobile Menu -->
-
 	<header class="site-header">
-			<nav id="mobile-navigation" class="navigation" role="navigation">
 
-				<div id="mobile-menu">
-					<?php wp_nav_menu( array(
-						'theme_location' => 'secondary',
-					) ); ?>
-				</div>
+      <!-- Mobile Menu Slide-out Panel -->
+
+			<div id="mobile-menu">
+				<?php wp_nav_menu( array(
+					'theme_location' => 'secondary',
+				) ); ?>
+			</div>
+
+      <!-- Mobile Menu Topbar -->
+
+			<nav id="mobile-navigation" class="navigation" role="navigation">
 
 				<div id="navigation-items-mobile">
 
           <!-- Logo in mobile menu -->
+
 						<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
 							<img src="<?php echo get_bloginfo('siteurl');?>/wp-content/uploads/2016/11/ea_logo.svg">
 						</a>
 
             <!-- Button in mobile menu -->
 
-						<div id="mobile-menu-button" onclick="toggleMobileMenu('mobile-menu')">
+						<div id="mobile-menu-button">
 							<svg width="31px" height="25px" viewBox="475 363 31 25" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
 						    <path d="M476.5,365 L493,365" id="Line" stroke="#005A73" stroke-width="2" stroke-linecap="round" fill="none"></path>
 						    <path d="M476.5,375 L499,375" id="Line-Copy" stroke="#005A73" stroke-width="2" stroke-linecap="round" fill="none"></path>
@@ -53,7 +49,7 @@ function toggleMobileMenu(id) {
 
 					</nav>
 
-<!-- Menu -->
+<!-- Desktop menu -->
 
 			<nav id="site-navigation" class="navigation" role="navigation">
 				<div id="navigation-items">
@@ -68,4 +64,15 @@ function toggleMobileMenu(id) {
 				</div>
 			</nav>
 
-	</header><!-- #masthead -->
+	</header>
+
+<!-- Slide out mobile menu script -->
+  <script>
+  jQuery(document).ready(function(){
+      jQuery('#mobile-menu-button').live('click', function(event) {
+           jQuery('#mobile-menu').slideToggle(200,'swing');
+      });
+    });
+  </script>
+
+  <div class="site-wrapper">
