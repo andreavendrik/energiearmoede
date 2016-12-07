@@ -34,7 +34,7 @@
           <!-- Logo in mobile menu -->
 
 						<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
-							<img src="<?php echo get_bloginfo('siteurl');?>/wp-content/uploads/2016/11/ea_logo.svg">
+							<img src="<?php echo get_bloginfo('siteurl');?>/wp-content/uploads/2016/12/ea_logo.svg">
 						</a>
 
             <!-- Button in mobile menu -->
@@ -54,7 +54,7 @@
 			<nav id="site-navigation" class="navigation" role="navigation">
 				<div id="navigation-items">
 						<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
-							<img src="<?php echo get_bloginfo('siteurl'); ?>/wp-content/uploads/2016/11/ea_logo.svg">
+							<img src="<?php echo get_bloginfo('siteurl'); ?>/wp-content/uploads/2016/12/ea_logo.svg">
 						</a>
 
 					<?php wp_nav_menu( array(

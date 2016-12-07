@@ -220,9 +220,9 @@ p
 
 .index-header
   width 100%
-  background-image url('../../../wp-content/uploads/2016/11/photo-1462003627669-87bee17e0b4e-1.jpeg')
+  background-image url('../../../wp-content/uploads/2016/11/headerbeeld2.jpg')
   background-size cover
-  background-position center
+  background-position center bottom
   min-height 550px
   box-sizing border-box
   position relative
@@ -245,9 +245,11 @@ p
   flex-direction column
   h1
     color white
+    text-shadow 0px 0px 5px rgba(30,30,30,0.5)
   h3
     color white
     max-width 500px
+    text-shadow 0px 0px 5px rgba(30,30,30,0.5)
 
 @media only screen and (max-width:breakpoint3)
   .header-title
@@ -256,12 +258,10 @@ p
       headingfont(36px,400,42px)
       color white
       margin-top 100px
-      text-shadow 0px 0px 5px rgba(30,30,30,0.3)
     h3
       headingfont(22px,,30px)
       color white
       margin-bottom 0px
-      text-shadow 0px 0px 5px rgba(30,30,30,0.3)
 
 // category tiles
 
@@ -286,10 +286,6 @@ p
       cursor pointer
       h2
         color blue
-        -webkit-animation h2moveup 0.2s 1
-        animation h2moveup 0.2s 1
-        -webkit-animation-fill-mode forwards
-        animation-fill-mode forwards
       &:before
         background-color #bed8e0
 
