@@ -81,3 +81,7 @@
   </script>
 
   <div class="site-wrapper">
+
+<!-- Flexibility script -->
+
+<script src="<?php echo esc_url( home_url( '/' ) ); ?>wp-content/themes/energie-armoede/js/flexibility-master/flexibility.js"></script>

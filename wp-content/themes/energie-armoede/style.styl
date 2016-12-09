@@ -1,7 +1,5 @@
 // out: style.css, sourcemap: true, compress: true
 yellow = #fdea4d
-
-
 blue = #005A73
 bluemiddle = #80ACB9
 bluelight = #E5EEF1
@@ -11,14 +9,14 @@ breakpoint2 = 860px
 breakpoint3 = 600px
 breakpoint4 = 480px
 
-bodyfont(font-size=18px, line-height=26px)
+bodyfont(font-size=17px, line-height=22px)
   font-size font-size
   line-height line-height
   font-family adelle-sans, 'Roboto', sans-serif
   font-weight 300
   color black
 
-headingfont(font-size=40px, font-weight=200, line-height=50px)
+headingfont(font-size=40px, font-weight=200, line-height=45px)
   font-family bree-serif, 'Bitter', sans-serif
   font-weight font-weight
   font-size font-size
@@ -45,7 +43,7 @@ h1
   color black
 
 h2
-  headingfont(36px)
+  headingfont(30px)
 
 h2 a
   text-decoration: none
@@ -80,7 +78,7 @@ p
 // menu
 
 .navigation
-  headingfont(18px,200,24px)
+  headingfont(17px,200,24px)
   position fixed
   height 55px
   z-index 100
@@ -118,7 +116,7 @@ p
           padding 15px
           margin-left -15px
           display none
-          bodyfont(16px,22px)
+          bodyfont(15px,22px)
           font-weight 400
           width 200px
           box-shadow 0px 0px 3px 1px rgba(30,30,30,0.2)
@@ -150,6 +148,7 @@ p
   headingfont(14px,500,14px)
   padding-bottom 3px
   margin-left 25px
+  margin-right 15px
   background-color blue
   color white
   cursor pointer
@@ -193,6 +192,7 @@ p
   display none
 
 #mobile-navigation
+  position relative
   display none
 
 @media only screen and (max-width:breakpoint2)
@@ -243,8 +243,8 @@ p
   width 100%
   background-image url('../../../wp-content/uploads/2016/11/headerbeeld2.jpg')
   background-size cover
-  background-position center bottom
-  min-height 550px
+  background-position bottom
+  min-height 80vh
   box-sizing border-box
   position relative
   padding 0px 25px 50px 75px
@@ -256,33 +256,41 @@ p
     min-height 80vh
 
 .header-title
-  max-width 1440px
   margin auto
   display flex
-  min-height 550px
-  height 550px
   box-sizing border-box
   justify-content flex-end
   flex-direction column
   h1
-    color white
-    text-shadow 0px 0px 5px rgba(30,30,30,0.5)
+    color black
+    // text-shadow 0px 0px 5px rgba(30,30,30,0.5)
   h3
-    color white
-    max-width 500px
-    text-shadow 0px 0px 5px rgba(30,30,30,0.5)
+    color black
+    // max-width 500px
+    // text-shadow 0px 0px 5px rgba(30,30,30,0.5)
 
 @media only screen and (max-width:breakpoint3)
   .header-title
-    min-height 80vh
     h1
       headingfont(36px,400,42px)
-      color white
-      margin-top 100px
     h3
       headingfont(22px,,30px)
-      color white
-      margin-bottom 0px
+
+// homepage content block
+
+.index-content
+  max-width 1440px
+  width 90%
+  padding 40px
+  box-sizing border-box
+  background-color white
+  margin -100px auto 0px
+  position relative
+
+@media only screen and (max-width:breakpoint3)
+  .index-content
+    width 100%
+    padding 40px 20px
 
 // category tiles
 
@@ -293,7 +301,7 @@ p
   flex-wrap wrap
 
 .category-tile
-  width calc(50% - 30px)
+  width calc(50% - 15px)
   margin-right 15px
   margin-bottom 15px
   box-sizing border-box
@@ -310,12 +318,6 @@ p
       &:before
         background-color #bed8e0
 
-.category-tile:nth-of-type(odd)
-  margin-left 15px
-
-.category-tile:nth-of-type(even)
-  width calc(50% - 15px)
-
 .category-tile:nth-of-type(n+3)
   flex-direction row-reverse
   .category-data
@@ -323,16 +325,14 @@ p
       right -20px
       left auto
 
-@media only screen and (max-width:breakpoint2)
+@media only screen and (max-width:breakpoint1)
   .category-tile
-    width calc(100% - 30px)
-    margin-left auto
-    margin-right auto
+    width calc(100% - 15px)
     margin-top 0px!important
     margin-bottom 15px
   .category-tile:nth-of-type(even)
     flex-direction row-reverse
-    width calc(100% - 30px)
+    width calc(100% - 15px)
     .category-data
       &:before
         right -20px
@@ -360,6 +360,9 @@ p
     height 100%
 
 @media only screen and (max-width:breakpoint3)
+  .category-tile
+    margin-right 0px
+    width 100%!important
   .category-image
     width 100%
     height auto
@@ -389,7 +392,7 @@ p
     height 40px
     background-color bluelight
     position absolute
-    top 80px
+    top 40%
     left -20px
     transform rotate(45deg)
   p
@@ -403,17 +406,23 @@ p
     transform translateY(1.5px)
     -webkit-transform translateY(1.5px)
 
+@media only screen and (max-width:1200px)
+  .category-data
+    h2
+      headingfont(23px,,26px)
+    h4
+      margin -5px 0px 15px
+      bodyfont(10px)
+    p
+      bodyfont(14px,18px)
+
 @media only screen and (max-width:breakpoint1)
   .category-data
     h2
-      headingfont(28px,,28px)
-    p
-      bodyfont(14px,20px)
-
-@media only screen and (max-width:breakpoint2)
-  .category-data
-    h2
-      headingfont()
+      headingfont(40px,,40px)
+    h4
+      margin 5px 0px 15px
+      bodyfont(12px)
     p
       bodyfont()
 
@@ -422,7 +431,7 @@ p
     h2
       headingfont(28px,,28px)
     p
-      bodyfont(14px,20px)
+      bodyfont(14px,18px)
 
 @media only screen and (max-width:breakpoint3)
   .category-data
@@ -431,7 +440,7 @@ p
     height auto
     h2
       margin-top 15px
-      headingfont(32px)
+      headingfont()
     p
       bodyfont()
       margin-bottom 25px
@@ -479,7 +488,7 @@ p
     headingfont(36px,200,32px)
     margin-bottom 15px
   article
-    bodyfont(18px,26px)
+    bodyfont(17px,26px)
     max-width 500px
   h4
     margin-bottom 5px
@@ -491,7 +500,7 @@ p
 @media only screen and (max-width:breakpoint4)
   #article-header
       article
-        bodyfont(16px,24px)
+        bodyfont(17px,24px)
 
 // article styling
 
@@ -517,7 +526,7 @@ p
         text-align left
         color blue
     p
-      bodyfont(18px, 30px)
+      bodyfont(17px, 27px)
       margin-top 20px
       &:first-of-type
         margin-top:25px
@@ -585,7 +594,7 @@ p
       margin-top 25px
   #article-text
     p
-      bodyfont(16px,26px)
+      bodyfont(17px,26px)
     blockquote
       width 90%
       padding 15px 0px 5px
@@ -599,7 +608,7 @@ p
 // sidebar with article list on article page
 
 aside
-  bodyfont(18px,26px)
+  bodyfont(17px,26px)
   background-color bluelight
   height 100%
   width 250px
@@ -618,7 +627,7 @@ aside
 @media only screen and (max-width:breakpoint1)
   aside
     width 200px
-    bodyfont(16px,22px)
+    bodyfont(17px,22px)
     margin-right 50px
 
 @media only screen and (max-width:breakpoint2)
@@ -652,18 +661,22 @@ aside
 
 .footer
   background-color rgba(0,0,0,0.05)
-  margin-top 25px
+  margin-top 15px
   text-align center
   width 100%
   color white
   min-height 200px
-  padding 25px
+  padding 15px
   box-sizing border-box
   p
     headingfont(24px,,32px)
     padding-top 50px
   span
     headingfont(24px,400,32px)
+  img
+    filter grayscale(100%)
+    height 45px
+    padding 30px 10px
 
 @media only screen and (max-width:breakpoint3)
   .footer

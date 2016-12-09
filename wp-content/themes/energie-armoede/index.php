@@ -16,15 +16,18 @@ $recent_posts = wp_get_recent_posts( $args, ARRAY_A );
 		<?php endif; ?>
 
 		<header class="index-header">
-			<div class="header-title">
-				<div><h1><?php echo get_bloginfo('name') ?></h1></div>
-				<div><h3><?php echo get_bloginfo('description') ?></h3></div>
-			</div>
 		</header>
 
 		<?php if ( have_posts() ) : ?>
 
-			<main class="categories">
+			<main class="index-content">
+
+				<div class="header-title">
+					<div><h1><?php echo get_bloginfo('name') ?></h1></div>
+					<div><h3><?php echo get_bloginfo('description') ?></h3></div>
+				</div>
+
+				<div class="categories">
 
 				<?php
 				$category_name = 'Project opzet';
@@ -43,8 +46,10 @@ $recent_posts = wp_get_recent_posts( $args, ARRAY_A );
 				$category_image_url = get_bloginfo('siteurl') . '/wp-content/uploads/2016/11/project.png';
 				include(get_template_directory() . '/category-tile.php');
 				?>
+			</div>
 
-			</main><!-- .entry -->
+
+		</main><!-- .entry -->
 
 		<?php else : ?>
 
