@@ -51,18 +51,23 @@ $prev_post = get_adjacent_post($post->ID);
 		<!-- Content of article -->
 
 		<h1><?php echo $post->post_title; ?></h1>
-		<div id="article-introduction">
-			<?php
-				$auto_paragraphs =  $post->introduction;
-				echo wpautop( $auto_paragraphs );
-				?>
-		</div>
+		<?php if( get_field('introduction') ): ?>
+			<div id="article-introduction">
+				<?php
+					$auto_paragraphs =  $post->introduction;
+					echo wpautop( $auto_paragraphs );
+					?>
+			</div>
+		<?php endif; ?>
+
 		<div id="article-text">
-			<?php
-				$auto_paragraphs =  $post->content;
-				echo wpautop( $auto_paragraphs );
-				?>
-		</div>
+			<?php if( get_field('content') ): ?>
+				<?php
+					$auto_paragraphs =  $post->content;
+					echo wpautop( $auto_paragraphs );
+					?>
+			</div>
+		<?php endif; ?>
 	</article>
 
 </main>
