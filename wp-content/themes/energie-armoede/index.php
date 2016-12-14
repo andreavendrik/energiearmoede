@@ -15,7 +15,8 @@ $recent_posts = wp_get_recent_posts( $args, ARRAY_A );
 
 		<?php endif; ?>
 
-		<header class="index-header">
+		<header class="index-header"
+		 style="background-image:url('<?php echo esc_url( home_url( '/' ) ); ?>/wp-content/themes/energie-armoede/images/headerbeeld.jpg')">
 		</header>
 
 		<?php if ( have_posts() ) : ?>
