@@ -34,7 +34,7 @@
           <!-- Logo in mobile menu -->
 
 						<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
-							<img src="http://energiearmoede.andreavendrik.nl/wp-content/uploads/2016/12/ea_logo-1.svg">
+							<img src="<?php echo esc_url( home_url( '/' ) ); ?>wp-content/themes/energie-armoede/images/ea_logo.svg">
 						</a>
 
             <!-- Button in mobile menu -->
@@ -55,7 +55,7 @@
 				<div id="navigation-items">
 					<div id="navigation-logo">
 						<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
-							<img src="http://energiearmoede.andreavendrik.nl/wp-content/uploads/2016/12/ea_logo-1.svg">
+							<img src="<?php echo esc_url( home_url( '/' ) ); ?>wp-content/themes/energie-armoede/images/ea_logo.svg">
 						</a>
 					</div>
 
@@ -64,7 +64,7 @@
 						'theme_location' => 'primary',
 						'menu_id'        => 'primary-menu',
 					) ); ?>
-						<button id="download-toolkit"  onclick="window.location='http://www.example.com';">Download als PDF</button>
+						<!-- <button id="download-toolkit"  onclick="window.location='http://www.example.com';">Download als PDF</button> -->
 					</div>
 				</div>
 			</nav>

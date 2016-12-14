@@ -50,7 +50,7 @@ h2 a
   color black
 
 h3
-  headingfont(24px, 200, 32px)
+  headingfont(24px, 200, 34px)
   line-height 32px
   margin-top 30px
   margin-bottom 50px
@@ -151,7 +151,7 @@ p
   width 240px
   headingfont(14px,500,14px)
   padding-bottom 3px
-  margin 0px 20px
+  margin 0px
   background-color blue
   color white
   cursor pointer
@@ -165,8 +165,8 @@ p
 
 #navigation-items, #navigation-items-mobile
   max-width 1440px
-  width 100%
-  margin auto
+  width 90%
+  margin 0 auto
   z-index 999
   img
     width 180px
@@ -174,17 +174,7 @@ p
     box-shadow 0px 0px 3px 1px rgba(30,30,30,0.2)
     position absolute
     top 0
-    margin-left 75px
-
-@media only screen and (min-width:1440px)
-  #navigation-items, #navigation-items-mobile
-    img
-      margin-left 25px
-
-@media only screen and (max-width:breakpoint3)
-  #navigation-items-mobile
-    img
-      margin-left 25px
+    // margin-left 40px
 
 @media only screen and (max-width:breakpoint4)
   #navigation-items-mobile
@@ -230,10 +220,6 @@ p
   svg
     path
       transition all 0.3s
-  &:hover
-    svg
-      path
-        stroke bluelight
   &:active
     svg
       path
@@ -244,7 +230,7 @@ p
 
 .index-header
   width 100%
-  background-image url('../../../wp-content/uploads/2016/11/headerbeeld2.jpg')
+  background-image url('/energiearmoede/wp-content/themes/energie-armoede/images/headerbeeld.jpg')
   background-size cover
   background-position bottom
   min-height 80vh
@@ -259,33 +245,76 @@ p
     min-height 80vh
 
 .header-title
-  margin auto
-  display flex
-  -js-display flex
-  box-sizing border-box
-  justify-content flex-end
-  flex-direction column
+  margin 0
+  padding 60px 80px 80px
+  max-width 1000px
   h1
     color black
-    // text-shadow 0px 0px 5px rgba(30,30,30,0.5)
   h3
     color black
-    // max-width 500px
-    // text-shadow 0px 0px 5px rgba(30,30,30,0.5)
+    margin-bottom 0px
 
 @media only screen and (max-width:breakpoint3)
   .header-title
+    padding 40px
     h1
       headingfont(36px,400,42px)
     h3
       headingfont(22px,,30px)
 
+@media only screen and (max-width:breakpoint4)
+  .header-title
+    padding 40px 20px
+
 // homepage content block
+
+.best-practices
+  background-color #bed8e0
+  padding 80px
+  margin-bottom 40px
+  h2
+    text-align center
+    headingfont(42px,200,45px)
+    margin-bottom 40px
+
+.best-practices-content
+  max-width 100%
+  display flex
+  justify-content space-between
+  align-items flex-start
+  div
+    width 300px
+    text-align center
+    padding-right 20px
+    max-width 500px
+    margin 0 auto
+  img
+    margin 40px 0px
+    width 180px
+    height 140px
+  p
+    line-height 24px
+    text-align left
+    span
+      font-weight bold
+
+@media only screen and (max-width:breakpoint2)
+  .best-practices
+    padding 60px 40px
+
+  .best-practices-content
+    display block
+    div
+      width 100%
+      margin-bottom 30px
+
+@media only screen and (max-width:breakpoint4)
+  .best-practices
+    padding 60px 20px
 
 .index-content
   max-width 1440px
   width 90%
-  padding 40px
   box-sizing border-box
   background-color white
   margin -100px auto 0px
@@ -294,16 +323,36 @@ p
 @media only screen and (max-width:breakpoint3)
   .index-content
     width 100%
-    padding 40px 20px
+    padding 0px
 
 // category tiles
 
 .categories
   max-width 1440px
-  margin auto
+  width 90%
+  margin 0 auto
   display flex
   -js-display flex
   flex-wrap wrap
+  h1
+    flex 0 0 100%
+    text-align center
+    headingfont(42px,200,45px)
+    margin 40px 0px 0px
+  h3
+    flex 0 0 100%
+    text-align center
+
+@media only screen and (max-width:breakpoint2)
+  .categories
+    h1
+      margin 20px 0px 0px
+    h3
+      padding 20px
+      box-sizing border-box
+      margin-bottom 20px
+    br
+      display none
 
 .category-tile
   width calc(50% - 15px)
@@ -314,7 +363,7 @@ p
   display flex
   -js-display flex
   flex-wrap wrap
-  background-color bluelight
+  background-color #9CBDC7
   &:hover
     .category-data
       background-color #bed8e0
@@ -360,7 +409,7 @@ p
 .category-image
   width 50%
   height 100%
-  background-color #80ACB8
+  background-color #9CBDC7
   img
     width 100%
     height 100%
@@ -369,6 +418,7 @@ p
   .category-tile
     margin-right 0px
     width 100%!important
+    margin-bottom 30px
   .category-image
     width 100%
     height auto
@@ -458,13 +508,18 @@ p
   min-height 350px
   max-width 100%
   box-sizing border-box
-  background-color #B2CDD5
+  background-color #9CBDC7
+  background-position center
+  background-size cover
+  background-repeat no-repeat
+  position relative
 
 .general-header-content
-  width 1440px
-  max-width 100%
-  margin auto
+  max-width 1440px
+  width 100%
   box-sizing border-box
+  margin 0 auto
+  z-index 2
 
 // header for 'regular' page
 
@@ -474,12 +529,20 @@ p
   h1
     position absolute
     bottom 40px
-@media only screen and (max-width:breakpoint2)
+  &:before
+    content ''
+    position absolute
+    width 100%
+    left 0px
+    top 0px
+    height 100%
+    background-image: linear-gradient(to top, rgba(255,255,255,0.6) 0%, rgba(255,255,255,0) 30%);
+@media only screen and (max-width:breakpoint1)
   #page-header
-    padding 75px
+    padding 50px
 @media only screen and (max-width:breakpoint3)
   #page-header
-    padding 75px 25px
+    padding 20px
 
 // header for article page
 
@@ -489,9 +552,17 @@ p
   -js-display flex
   justify-content flex-end
   flex-direction column
-  background-position right top
-  background-size contain
+  background-position bottom center
+  background-size cover
   background-repeat no-repeat
+  &:after
+    content ''
+    position absolute
+    width 100%
+    left 0px
+    top 0px
+    height 100%
+    background-image: linear-gradient(to top right, rgba(156,189,199,0.9) 20%, rgba(156,189,199,0) 40%);
   h2
     headingfont(36px,200,32px)
     margin-bottom 15px
@@ -514,17 +585,17 @@ p
 
 .general-content
   max-width 1440px
+  width 100%
   position relative
   box-sizing border-box
   background-color white
-  margin auto
+  margin 0 auto
   h1
     headingfont(45px,400)
     margin-top 75px
   article
     max-width 650px
     flex 3
-    margin 0px 0px 50px 0px
     blockquote
       width 90%
       margin-left 50px
@@ -539,13 +610,12 @@ p
       &:first-of-type
         margin-top:25px
 
-@media only screen and (max-width:breakpoint4)
+@media only screen and (max-width:breakpoint3)
   .general-content
+    margin 0 auto
     h1
       headingfont(40px,400,42px)
       margin-top 50px
-    article
-      margin 0px
 
 #article-content
   padding 0px 50px
@@ -553,28 +623,19 @@ p
   -js-display flex
   flex-wrap wrap
 
-#page-content
-  padding 25px 125px
-
 @media only screen and (min-width 1440px)
   #article-content
     padding 0px
-  #page-content
-    padding-left 50px
 
 @media only screen and (max-width:breakpoint2)
   .general-content
     display block
   #article-content
     padding 0px 50px 75px 50px
-  #page-content
-    padding 50px 75px
 
 @media only screen and (max-width:breakpoint3)
   #article-content
     padding 0px 25px
-  #page-content
-    padding 50px 25px
 
 @media only screen and (max-width:breakpoint4)
   #article-content
@@ -613,6 +674,15 @@ p
         text-align left
         color blue
         margin 0px
+
+//page styling
+
+#page-content
+  article
+    margin-left 125px
+    p
+      &:first-of-type
+        margin-top 75px
 
 // sidebar with article list on article page
 
@@ -671,7 +741,7 @@ aside
 
 .footer
   background-color rgba(0,0,0,0.05)
-  margin-top 15px
+  margin-top 80px
   text-align center
   width 100%
   color white
@@ -685,6 +755,7 @@ aside
     headingfont(24px,400,32px)
   img
     filter grayscale(100%)
+    -webkit-filter: grayscale(1);
     height 45px
     padding 30px 10px
 
@@ -692,4 +763,4 @@ aside
   .footer
     margin-top 0px
     p
-      padding-top 10px
+      padding 20px
