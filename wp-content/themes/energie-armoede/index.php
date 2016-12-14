@@ -60,7 +60,7 @@ $recent_posts = wp_get_recent_posts( $args, ARRAY_A );
 				<section class="categories">
 
 					<h1>De toolkit</h1>
-					<h3>Hier vind je handige instrumenten om succesvol aan de slag<br> te gaan met de aanpak van energiearmoede.</h3>
+					<h3>Hier vindt u handige instrumenten om succesvol aan de slag<br> te gaan met de aanpak van energiearmoede.</h3>
 
 				<?php
 				$category_name = 'Project opzet';

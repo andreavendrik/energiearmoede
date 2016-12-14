@@ -58,7 +58,7 @@ h3
 
 h4
   text-transform uppercase
-  bodyfont(12px,12px)
+  bodyfont(12px,14px)
   margin 10px 0px 25px 0px
 
 article
@@ -204,12 +204,15 @@ p
   background-color blue
   text-align center
   padding 40px 20px
+  box-sizing border-box
   headingfont(28px)
   a
     text-decoration none
     color white
   ul
     list-style none
+    li
+      margin-bottom 10px
 
 #mobile-menu-button
   position absolute
@@ -231,12 +234,11 @@ p
 .index-header
   width 100%
   background-size cover
-  background-position bottom
+  background-position bottom center
   min-height 80vh
   box-sizing border-box
   position relative
   padding 0px 25px 50px 75px
-  margin-bottom 15px
 
 @media only screen and (max-width:breakpoint3)
   .index-header
@@ -284,11 +286,11 @@ p
   div
     width 300px
     text-align center
-    padding-right 20px
+    padding-right 25px
     max-width 500px
     margin 0 auto
   img
-    margin 40px 0px
+    margin 30px 0px
     width 180px
     height 140px
   p
@@ -316,13 +318,14 @@ p
   width 90%
   box-sizing border-box
   background-color white
-  margin -100px auto 0px
+  margin -80px auto 0px
   position relative
 
 @media only screen and (max-width:breakpoint3)
   .index-content
     width 100%
     padding 0px
+    margin 0 auto
 
 // category tiles
 
@@ -496,7 +499,7 @@ p
     height auto
     h2
       margin-top 15px
-      headingfont()
+      headingfont(32px,,32px)
     p
       bodyfont()
       margin-bottom 25px
@@ -508,7 +511,7 @@ p
   max-width 100%
   box-sizing border-box
   background-color #9CBDC7
-  background-position top center
+  background-position right center
   background-size cover
   background-repeat no-repeat
   position relative
@@ -535,7 +538,7 @@ p
     left 0px
     top 0px
     height 100%
-    background-image: linear-gradient(to top, rgba(255,255,255,0.6) 0%, rgba(255,255,255,0) 30%);
+    background-image: linear-gradient(to top right, rgba(255,255,255,0.6) 20%, rgba(255,255,255,0) 40%);
 @media only screen and (max-width:breakpoint1)
   #page-header
     padding 50px
@@ -561,9 +564,9 @@ p
     left 0px
     top 0px
     height 100%
-    background-image: linear-gradient(to top right, rgba(156,189,199,0.9) 20%, rgba(156,189,199,0) 40%);
+    background-image: linear-gradient(to top right, rgba(156,189,199,0.9) 20%, rgba(156,189,199,0) 45%);
   h2
-    headingfont(36px,200,32px)
+    headingfont(36px,400,32px)
     margin-bottom 15px
   article
     bodyfont(17px,26px)
@@ -643,6 +646,7 @@ p
       padding 0px 25px
 
 #article-text
+  margin-bottom 50px
   p
     img
       width 100%
@@ -683,6 +687,19 @@ p
       &:first-of-type
         margin-top 75px
 
+@media only screen and (max-width:breakpoint1)
+  #page-content
+    article
+      margin 0px 40px
+      p
+        &:first-of-type
+          margin-top 40px
+
+@media only screen and (max-width:breakpoint3)
+  #page-content
+    article
+      margin 0px 20px
+
 // sidebar with article list on article page
 
 aside
@@ -690,17 +707,31 @@ aside
   background-color bluelight
   height 100%
   width 250px
-  padding 20px 25px 25px 25px
   margin-right 75px
   h4
     margin 50px 0px 15px 0px
+    padding 0px 20px
   a
     text-decoration none
+    &:hover
+      color blue
   ul
     list-style-type decimal
     list-style-position inside
     li
-      margin-top 8px
+      padding 16px 25px 8px 25px
+      transition all 0.2s
+      &:last-of-type
+        padding-bottom 16px
+      &:hover
+        background-color white
+        opacity 0.8
+      &[data-active="1"]
+        background-color #f7f9f9
+        padding 20px 25px
+        a
+          color blue
+          font-weight bold
 
 @media only screen and (max-width:breakpoint1)
   aside
@@ -711,7 +742,7 @@ aside
 @media only screen and (max-width:breakpoint2)
   aside
     width 100%
-    margin-right 0px
+    margin auto
 
 @media only screen and (max-width:breakpoint4)
   aside
