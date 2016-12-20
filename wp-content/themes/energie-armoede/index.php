@@ -9,7 +9,7 @@ $recent_posts = wp_get_recent_posts( $args, ARRAY_A );
 
 		<?php if ( is_404() ) : ?>
 
-			<header class="page-header">
+			<header class="page-header" id="error-message">
 				<h1 class="header-title"><?php esc_html_e( 'Oeps! Deze pagina bestaat niet.', 'wpex' ); ?></h1>
 			</header><!-- .page-header -->
 
@@ -36,19 +36,19 @@ $recent_posts = wp_get_recent_posts( $args, ARRAY_A );
 					</div>
 
 					<div class="best-practices-content">
-						<div>
+						<div id="best-practices-1">
 							<img src="<?php echo esc_url( home_url( '/' ) ); ?>wp-content/themes/energie-armoede/images/best_practice_01.svg">
 							<p>
 								<span>Vind de intrinsieke motivatie van deelnemers aan het project.</span> Dan besparen zij meer. Geld is niet altijd de belangrijkste drijfveer. Energieadvies is maatwerk en mensenwerk.
 							</p>
 					</div>
-					<div>
+					<div id="best-practices-2">
 						<img src="<?php echo esc_url( home_url( '/' ) ); ?>wp-content/themes/energie-armoede/images/best_practice_02.svg">
 						<p>
-							<span>Bezoek huishoudens meer dan een keer,</span> herhaal de gegeven informatie, breng samen met bewoners besparende producten aan en installeer apps om energieverbruik te monitoren samen.
+							<span>Bezoek huishoudens meer dan een keer,</span> herhaal de gegeven informatie, breng samen met bewoners besparende producten aan en installeer apps om energieverbruik samen te monitoren.
 						</p>
 					</div>
-					<div>
+					<div id="best-practices-3">
 						<img src="<?php echo esc_url( home_url( '/' ) ); ?>wp-content/themes/energie-armoede/images/best_practice_03.svg">
 						<p>
 							<span>Gebruik bij de opzet van een project voldoende tijd en middelen.</span> Waardeer de energiecoaches, train hen de juiste skills en betrek organisaties erbij die het vertrouwen hebben van de doelgroep.
@@ -91,4 +91,26 @@ $recent_posts = wp_get_recent_posts( $args, ARRAY_A );
 		<?php endif; ?>
 
 
+<script>
+
+/* Every time the window is scrolled ... */
+$(window).scroll( function(){
+
+    /* Check the location of each desired element */
+    $('#best-practices-1').each( function(i){
+
+        var bottom_of_object = $(this).offset().top + $(this).outerHeight();
+        var bottom_of_window = $(window).scrollTop() + $(window).height();
+
+        /* If the object is completely visible in the window, fade it in */
+        if( bottom_of_window > bottom_of_object ){
+
+            $(this).animate({'opacity':'1','margin-top':'0px'},500);
+						$('#best-practices-2').delay(500).animate({'opacity':'1','margin-top':'0px'},500);
+						$('#best-practices-3').delay(1000).animate({'opacity':'1','margin-top':'0px','margin-bottom':'20px'},500);
+        }
+    });
+
+});
+</script>
 <?php get_footer(); ?>

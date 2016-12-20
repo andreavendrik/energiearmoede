@@ -49,7 +49,7 @@ $prev_post = get_adjacent_post($post->ID);
 
 	<!-- Previous post button -->
 
-	<article>
+	<article id="article-content">
 
 		<!-- Content of article -->
 
@@ -71,10 +71,10 @@ $prev_post = get_adjacent_post($post->ID);
 					?>
 			</div>
 		<?php endif; ?>
+
 	</article>
 
 </main>
-
 
 
 <?php get_footer(); ?>

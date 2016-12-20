@@ -165,7 +165,8 @@ p
 
 #navigation-items, #navigation-items-mobile
   max-width 1440px
-  width 90%
+  width 100%
+  padding 0px 50px
   margin 0 auto
   z-index 999
   img
@@ -279,15 +280,16 @@ p
     margin-bottom 40px
 
 .best-practices-content
-  max-width 100%
+  max-width 1440px
+  width 100%
+  margin 0 auto
   display flex
   justify-content space-between
   align-items flex-start
   div
-    width 300px
+    max-width 350px
     text-align center
-    padding-right 25px
-    max-width 500px
+    padding-right 35px
     margin 0 auto
   img
     margin 30px 0px
@@ -312,6 +314,10 @@ p
 @media only screen and (max-width:breakpoint4)
   .best-practices
     padding 60px 20px
+
+#best-practices-1, #best-practices-2, #best-practices-3
+  opacity 0
+  margin-top 20px
 
 .index-content
   max-width 1440px
@@ -545,6 +551,12 @@ p
 @media only screen and (max-width:breakpoint3)
   #page-header
     padding 20px
+
+//error message
+
+#error-message
+  text-align center
+  padding-top 50px
 
 // header for article page
 
