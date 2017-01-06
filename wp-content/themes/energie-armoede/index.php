@@ -24,34 +24,34 @@ $recent_posts = wp_get_recent_posts( $args, ARRAY_A );
 			<section class="index-content">
 
 				<div class="header-title">
-					<div><h1><?php echo get_bloginfo('name') ?></h1></div>
-					<div><h3><?php echo get_bloginfo('description') ?></h3></div>
+					<div><h1><?php echo strip_tags(get_field('header_titel', 95), '<strong><br>'); ?></h1></div>
+					<div><h3><?php echo strip_tags(get_field('header_beschrijving', 95), '<strong><br>'); ?></h3></div>
 				</div>
 
 			</section>
 
 				<section class="best-practices">
 					<div class="best-practices-title">
-						<?php the_field('belangrijkste_lessen_titel'); ?></li>
+						<h2><?php echo get_field('belangrijkste_lessen_titel', 95); ?></h2>
 					</div>
 
 					<div class="best-practices-content">
 						<div id="best-practices-1">
 							<img src="<?php echo esc_url( home_url( '/' ) ); ?>wp-content/themes/energie-armoede/images/best_practice_01.svg">
 							<p>
-								<span>Vind de intrinsieke motivatie van deelnemers aan het project.</span> Dan besparen zij meer. Geld is niet altijd de belangrijkste drijfveer. Energieadvies is maatwerk en mensenwerk.
+								<?php echo strip_tags(get_field('belangrijkste_les_1', 95), '<strong><br>'); ?>
 							</p>
 					</div>
 					<div id="best-practices-2">
 						<img src="<?php echo esc_url( home_url( '/' ) ); ?>wp-content/themes/energie-armoede/images/best_practice_02.svg">
 						<p>
-							<span>Bezoek huishoudens meer dan een keer,</span> herhaal de gegeven informatie, breng samen met bewoners besparende producten aan en installeer apps om energieverbruik samen te monitoren.
+								<?php echo strip_tags(get_field('belangrijkste_les_2', 95), '<strong><br>'); ?>
 						</p>
 					</div>
 					<div id="best-practices-3">
 						<img src="<?php echo esc_url( home_url( '/' ) ); ?>wp-content/themes/energie-armoede/images/best_practice_03.svg">
 						<p>
-							<span>Gebruik bij de opzet van een project voldoende tijd en middelen.</span> Waardeer de energiecoaches, train hen de juiste skills en betrek organisaties erbij die het vertrouwen hebben van de doelgroep.
+								<?php echo strip_tags(get_field('belangrijkste_les_3', 95), '<strong><br>'); ?>
 						</p>
 					</div>
 				</div>
@@ -59,8 +59,8 @@ $recent_posts = wp_get_recent_posts( $args, ARRAY_A );
 
 				<section class="categories">
 
-					<h1>De toolkit</h1>
-					<h3>Hier vindt u handige instrumenten om succesvol aan de slag<br> te gaan met de aanpak van energiearmoede.</h3>
+					<h1><?php echo strip_tags(get_field('toolkit_titel', 95), '<strong><br>'); ?></h1>
+					<h3><?php echo strip_tags(get_field('toolkit_beschrijving', 95), '<strong><br>'); ?></h3>
 
 				<?php
 				$category_name = 'Project opzet';
