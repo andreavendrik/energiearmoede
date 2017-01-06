@@ -46,7 +46,7 @@ $prev_post = get_adjacent_post($post->ID);
 
 	<!-- Previous post button -->
 
-	<article id="article-content">
+	<article id="post">
 
 		<!-- Content of article -->
 
