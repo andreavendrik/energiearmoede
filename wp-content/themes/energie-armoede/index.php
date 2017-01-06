@@ -32,7 +32,7 @@ $recent_posts = wp_get_recent_posts( $args, ARRAY_A );
 
 				<section class="best-practices">
 					<div class="best-practices-title">
-						<h2>De belangrijkste lessen</h2>
+						<?php the_field('belangrijkste_lessen_titel'); ?></li>
 					</div>
 
 					<div class="best-practices-content">
