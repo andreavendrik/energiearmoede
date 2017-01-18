@@ -26,6 +26,7 @@ headingfont(font-size=40px, font-weight=200, line-height=45px)
 *
   padding 0
   margin 0
+  box-sizing border-box
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 
@@ -101,11 +102,13 @@ p
   height 55px
   z-index 100
   background-color rgba(255,255,255,1)
-  display flex
   display -ms-flexbox
+  display flex
   width 100%
   left 0
+  -ms-flex-pack justify
   justify-content space-between
+  -ms-flex-align center
   align-items center
   box-sizing border-box
   box-shadow 0px 0px 3px 1px rgba(30,30,30,0.2)
@@ -115,8 +118,9 @@ p
 .menu-default-menu-container
   ul
     list-style none
-    display flex
     display -ms-flexbox
+    display flex
+    -ms-flex-pack end
     justify-content flex-end
     li
       padding 15px 0px
@@ -154,13 +158,15 @@ p
             border-bottom 0px
 
 #navigation-items
-  display flex
   display -ms-flexbox
+  display flex
+  -ms-flex-pack justify
   justify-content space-between
 
 #navigation-links
-  display flex
   display -ms-flexbox
+  display flex
+  -ms-flex-align center
   align-items center
 
 #download-toolkit
@@ -240,6 +246,12 @@ p
   top 15px
   cursor pointer
   -webkit-transition stroke 1s
+  width 28px
+  height 21px
+  img
+    width 100%
+    height 100%
+    box-shadow none
   svg
     path
       transition all 0.3s
@@ -305,8 +317,11 @@ p
   max-width 1440px
   width 100%
   margin 0 auto
+  display -ms-flexbox
   display flex
+  -ms-flex-pack justify
   justify-content space-between
+  -ms-flex-align start
   align-items flex-start
   div
     max-width 350px
@@ -336,6 +351,8 @@ p
 @media only screen and (max-width:breakpoint4)
   .best-practices
     padding 60px 20px
+    div
+      padding-right 0px
 
 #best-practices-1, #best-practices-2, #best-practices-3
   opacity 0
@@ -361,8 +378,9 @@ p
   max-width 1440px
   width 90%
   margin 0 auto
-  display flex
   display -ms-flexbox
+  display flex
+  -ms-flex-wrap wrap
   flex-wrap wrap
   h1
     flex 0 0 100%
@@ -389,9 +407,11 @@ p
   margin-right 15px
   margin-bottom 15px
   box-sizing border-box
+  -ms-flex-align stretch
   align-items stretch
-  display flex
   display -ms-flexbox
+  display flex
+  -ms-flex-wrap wrap
   flex-wrap wrap
   background-color #9CBDC7
   &:hover
@@ -404,6 +424,7 @@ p
         background-color #bed8e0
 
 .category-tile:nth-of-type(n+3)
+  -ms-flex-direction row-reverse
   flex-direction row-reverse
   .category-data
     &:before
@@ -416,6 +437,7 @@ p
     margin-top 0px!important
     margin-bottom 15px
   .category-tile:nth-of-type(even)
+    -ms-flex-direction row-reverse
     flex-direction row-reverse
     width calc(100% - 15px)
     .category-data
@@ -423,6 +445,7 @@ p
         right -20px
         left auto
   .category-tile:nth-of-type(3)
+    -ms-flex-direction row
     flex-direction row
     .category-data
       &:before
@@ -459,9 +482,11 @@ p
   padding 20px
   box-sizing border-box
   position relative
-  display flex
   display -ms-flexbox
+  display flex
+  -ms-flex-direction column
   flex-direction column
+  -ms-flex-pack center
   justify-content center
   background-color bluelight
   transition all 0.3s
@@ -595,9 +620,11 @@ p
 
 #article-header
   padding 200px 0px 30px 0px
-  display flex
   display -ms-flexbox
+  display flex
+  -ms-flex-pack end
   justify-content flex-end
+  -ms-flex-direction column
   flex-direction column
   background-position bottom center
   background-size cover
@@ -676,8 +703,9 @@ p
     padding 0px 25px
     
 #article-content
-  display flex
   display -ms-flexbox
+  display flex
+  -ms-flex-wrap wrap
   flex-wrap wrap
 
 #article-text
@@ -791,8 +819,9 @@ aside
 
 #prev-next-post-nav
   padding 10px 0px
+  display -ms-flexbox  
   display flex
-  display -ms-flexbox
+  -ms-flex-pack justify
   justify-content space-between
   h4
     margin-bottom 0px
@@ -811,27 +840,40 @@ aside
   background-color rgba(0,0,0,0.05)
   margin-top 80px
   text-align center
+  box-sizing border-box
   width 100%
   color white
   min-height 200px
   padding 15px 15px 50px
   box-sizing border-box
+  
+  .footer-inner
+    width 1000px
+    max-width 100%
+    margin 0 auto
+    text-align center
+    box-sizing border-box
+
   p
-    max-width 1000px
-    margin auto
     headingfont(24px,,32px)
     padding 50px 0px 0px
-    display flex
-    flex-wrap wrap
-    justify-content center
-    align-items center
+    // display -ms-flexbox
+    // display flex
+    // -ms-flex-wrap wrap
+    // flex-wrap wrap
+    // -ms-flex-pack center
+    // justify-content center
+    // -ms-flex-align center
+    // align-items center
+    overflow hidden
   span
     headingfont(24px,400,32px)
   img
+    display inline-block
     filter grayscale(100%)
     -webkit-filter: grayscale(1);
     height 50px
-    padding 20px 30px
+    margin 20px 30px
 
 #logo_tertium 
   height 35px

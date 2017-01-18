@@ -14,7 +14,7 @@ $most_recent_post_in_category = $category_posts[0];
     <a
       href="<?php echo get_permalink($most_recent_post_in_category->ID); ?>"
       title="<?php echo $category_name; ?>">
-      <img src="<?php echo $category_image_url; ?>">
+      <img src="<?php echo $category_image_url; ?>" border=0>
     </a>
   </div>
   <div class="category-data">

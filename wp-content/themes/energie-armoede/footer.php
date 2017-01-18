@@ -1,6 +1,8 @@
 <?php wp_footer(); ?>
 
     <div class="footer">
+
+      <div class="footer-inner">
       <p>De&nbsp;<span>energie armoede toolkit</span>&nbsp;is mede mogelijk gemaakt door </p>
       <p>
       <a href="https://www.alliander.com" target="_blank"><img src="<?php echo esc_url( home_url( '/' ) ); ?>wp-content/themes/energie-armoede/images/logo_alliander.png" id="logo_alliander" class="grayscale" border=0></a>
@@ -12,11 +14,12 @@
       <a href="https://www.utrecht.nl/" target="_blank"><img src="<?php echo esc_url( home_url( '/' ) ); ?>wp-content/themes/energie-armoede/images/logo_gmu.svg" id="logo_gmu" border=0></a>
       <a href="http://www.wooninfo.nl/" target="_blank"><img src="<?php echo esc_url( home_url( '/' ) ); ?>wp-content/themes/energie-armoede/images/logo_woon.png" id="logo_woon" class="grayscale" border=0></a>
       </p>
+      </div>
     </div>
 
   </div>
 
-<script src="<?php echo esc_url( home_url( '/' ) ); ?>wp-content/themes/energie-armoede/js/jquery.gray.min.js"></script>
-
+<!-- <script src="<?php echo esc_url( home_url( '/' ) ); ?>wp-content/themes/energie-armoede/js/jquery.gray.min.js"></script>
+ -->
 </body>
 </html>

@@ -63,7 +63,7 @@ $prev_post = get_adjacent_post($post->ID);
 		<div id="article-text">
 			<?php if( get_field('content') ): ?>
 				<?php
-					$auto_paragraphs =  get_the_content();//$post->content;
+					$auto_paragraphs =  $post->content;
 					echo wpautop( $auto_paragraphs );
 					?>
 			</div>

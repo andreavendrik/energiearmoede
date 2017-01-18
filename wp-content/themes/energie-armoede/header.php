@@ -42,11 +42,7 @@
             <!-- Button in mobile menu -->
 
 						<div id="mobile-menu-button">
-							<svg width="31px" height="25px" viewBox="475 363 31 25" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-						    <path d="M476.5,365 L493,365" id="Line" stroke="#005A73" stroke-width="2" stroke-linecap="round" fill="none"></path>
-						    <path d="M476.5,375 L499,375" id="Line-Copy" stroke="#005A73" stroke-width="2" stroke-linecap="round" fill="none"></path>
-						    <path d="M476.5,386 L504.5,386" id="Line-Copy-2" stroke="#005A73" stroke-width="2" stroke-linecap="round" fill="none"></path>
-							</svg>
+							<img src="<?php echo esc_url( home_url( '/' ) ); ?>wp-content/themes/energie-armoede/images/menu.png" border=0>
 						</div>
 
 					</nav>
