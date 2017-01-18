@@ -9,7 +9,7 @@ breakpoint2 = 860px
 breakpoint3 = 600px
 breakpoint4 = 480px
 
-bodyfont(font-size=17px, line-height=22px)
+bodyfont(font-size=17px, line-height=27px)
   font-size font-size
   line-height line-height
   font-family adelle-sans, 'Roboto', sans-serif
@@ -63,6 +63,24 @@ h4
 
 article
   bodyfont()
+  word-wrap break-word
+  ol 
+    margin:0px;
+    padding-left:15px;
+  ol li 
+    margin: 0px;
+    padding: 0px;
+    margin-left: 1em;
+  ul
+    margin:0;
+    padding-left:30px;
+    &:first-of-kind
+      margin-top 25px
+  ul li
+    margin: 0px;
+    padding: 0px;
+    margin-left: -0.5em;  
+    margin-bottom 10px
 
 p
   bodyfont()
@@ -84,7 +102,7 @@ p
   z-index 100
   background-color rgba(255,255,255,1)
   display flex
-  -js-display flex
+  display -ms-flexbox
   width 100%
   left 0
   justify-content space-between
@@ -98,7 +116,7 @@ p
   ul
     list-style none
     display flex
-    -js-display flex
+    display -ms-flexbox
     justify-content flex-end
     li
       padding 15px 0px
@@ -137,14 +155,12 @@ p
 
 #navigation-items
   display flex
-  -js-display flex
+  display -ms-flexbox
   justify-content space-between
-  div
-    width 500px
 
 #navigation-links
   display flex
-  -js-display flex
+  display -ms-flexbox
   align-items center
 
 #download-toolkit
@@ -209,7 +225,7 @@ p
   text-align center
   padding 40px 20px
   box-sizing border-box
-  headingfont(28px)
+  headingfont(22px)
   a
     text-decoration none
     color white
@@ -264,6 +280,7 @@ p
 @media only screen and (max-width:breakpoint3)
   .header-title
     padding 40px
+    text-align left
     h1
       headingfont(36px,400,42px)
     h3
@@ -271,7 +288,7 @@ p
 
 @media only screen and (max-width:breakpoint4)
   .header-title
-    padding 40px 20px
+    padding 20px 20px 40px
 
 // homepage content block
 
@@ -334,9 +351,9 @@ p
 
 @media only screen and (max-width:breakpoint3)
   .index-content
-    width 100%
+    width 90%
     padding 0px
-    margin 0 auto
+    margin -40px auto 0px
 
 // category tiles
 
@@ -345,7 +362,7 @@ p
   width 90%
   margin 0 auto
   display flex
-  -js-display flex
+  display -ms-flexbox
   flex-wrap wrap
   h1
     flex 0 0 100%
@@ -374,7 +391,7 @@ p
   box-sizing border-box
   align-items stretch
   display flex
-  -js-display flex
+  display -ms-flexbox
   flex-wrap wrap
   background-color #9CBDC7
   &:hover
@@ -443,7 +460,7 @@ p
   box-sizing border-box
   position relative
   display flex
-  -js-display flex
+  display -ms-flexbox
   flex-direction column
   justify-content center
   background-color bluelight
@@ -466,7 +483,7 @@ p
     left -20px
     transform rotate(45deg)
   p
-    bodyfont()
+    bodyfont(,23px)
 
 @-webkit-keyframes h2moveup
   0%
@@ -548,7 +565,7 @@ p
 // header for 'regular' page
 
 #page-header
-  padding 150px 0px 30px
+  padding 150px 5sx0px 30px
   position relative
   h1
     position absolute
@@ -579,7 +596,7 @@ p
 #article-header
   padding 200px 0px 30px 0px
   display flex
-  -js-display flex
+  display -ms-flexbox
   justify-content flex-end
   flex-direction column
   background-position bottom center
@@ -597,15 +614,23 @@ p
     headingfont(36px,400,32px)
     margin-bottom 15px
   article
-    bodyfont(17px,26px)
+    bodyfont(17px,27px)
     max-width 500px
   h4
     margin-bottom 5px
 
+@media only screen and (max-width:breakpoint3)
+  #article-header
+    article
+    &:after
+      background-image: linear-gradient(to top, rgba(156,189,199,0.9) 25%, rgba(156,189,199,0) 55%);
+
 @media only screen and (max-width:breakpoint4)
   #article-header
-      article
-        bodyfont(17px,24px)
+    article
+      bodyfont(17px,27px)
+    &:after
+      background-image: linear-gradient(to top, rgba(156,189,199,0.9) 30%, rgba(156,189,199,0) 65%);
 
 // article styling
 
@@ -652,17 +677,22 @@ p
     
 #article-content
   display flex
-  -js-display flex
+  display -ms-flexbox
   flex-wrap wrap
 
 #article-text
   margin-bottom 50px
+  bodyfont(17px,27px)
   p
+    margin-top 25px
     img
       width 100%
       height 100%
 
 #article-introduction
+  ul
+    &:first-of-type
+      margin-top 25px
   p
     headingfont(23px,,32px)
     margin-top 40px
@@ -677,7 +707,7 @@ p
       margin-top 25px
   #article-text
     p
-      bodyfont(17px,26px)
+      bodyfont(17px,27px)
     blockquote
       width 90%
       padding 15px 0px 5px
@@ -692,14 +722,13 @@ p
 
 #page-content
   article
+    margin 0px 50px    
     p
       &:first-of-type
         margin-top 75px
 
 @media only screen and (max-width:breakpoint1)
   #page-content
-    article
-      margin 0px 50px
       p
         &:first-of-type
           margin-top 40px
@@ -712,7 +741,7 @@ p
 // sidebar with article list on article page
 
 aside
-  bodyfont(17px,26px)
+  bodyfont(17px,27px)
   background-color bluelight
   height 100%
   width 300px
@@ -763,7 +792,7 @@ aside
 #prev-next-post-nav
   padding 10px 0px
   display flex
-  -js-display flex
+  display -ms-flexbox
   justify-content space-between
   h4
     margin-bottom 0px
@@ -785,21 +814,110 @@ aside
   width 100%
   color white
   min-height 200px
-  padding 15px
+  padding 15px 15px 50px
   box-sizing border-box
   p
+    max-width 1000px
+    margin auto
     headingfont(24px,,32px)
-    padding-top 50px
+    padding 50px 0px 0px
+    display flex
+    flex-wrap wrap
+    justify-content center
+    align-items center
   span
     headingfont(24px,400,32px)
   img
     filter grayscale(100%)
     -webkit-filter: grayscale(1);
-    height 45px
-    padding 30px 10px
+    height 50px
+    padding 20px 30px
 
+#logo_tertium 
+  height 35px
+  
+#logo_dynamo
+  height 55px
+  
+#logo_woon
+  height 65px  
+      
+#logo_gmu
+  height 65px
+  
+#logo_ecn
+  height 38px
+
+.video-container
+  position relative
+  padding-bottom 56.25%
+  padding-top 25px
+  height 0
+
+  iframe
+    position absolute
+    top 0
+    left 0
+    width 100%
+    height 100%
+    
 @media only screen and (max-width:breakpoint3)
   .footer
     margin-top 0px
     p
       padding 20px
+
+/*! Gray v1.5.0 (https://github.com/karlhorky/gray) | MIT */
+.grayscale {
+  /* Firefox 10-34 */
+  filter: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg'><filter id='grayscale'><feColorMatrix type='saturate' values='0'/></filter></svg>#grayscale");
+
+  /*
+    Chrome 19+,
+    Safari 6+,
+    Safari 6+ iOS,
+    Opera 15+
+  */
+  -webkit-filter: grayscale(1);
+
+  /* Firefox 35+ */
+  filter: grayscale(1);
+
+  /* IE 6-9 */
+  filter: gray;
+}
+
+.grayscale.grayscale-fade {
+  transition: filter .5s;
+}
+
+/* Webkit hack until filter is unprefixed */
+@media screen and (-webkit-min-device-pixel-ratio: 0) {
+  .grayscale.grayscale-fade {
+    -webkit-transition: -webkit-filter .5s;
+    transition:         -webkit-filter .5s;
+  }
+}
+
+.grayscale.grayscale-off,
+.grayscale.grayscale-fade:hover {
+  -webkit-filter: grayscale(0);
+  filter:         grayscale(0);
+}
+
+/* Background element */
+.grayscale.grayscale-replaced {
+  -webkit-filter: none;
+  filter:         none;
+}
+
+.grayscale.grayscale-replaced > svg {
+  -webkit-transition: opacity .5s ease;
+  transition:         opacity .5s ease;
+  opacity: 1;
+}
+
+.grayscale.grayscale-replaced.grayscale-off > svg,
+.grayscale.grayscale-replaced.grayscale-fade:hover > svg {
+  opacity: 0;
+}
