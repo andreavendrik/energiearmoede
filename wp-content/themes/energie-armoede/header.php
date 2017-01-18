@@ -9,10 +9,12 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
   <script src="https://use.typekit.net/nil6uze.js"></script>
   <script>try{Typekit.load({ async: true });}catch(e){}</script>
+  <script src="<?php echo esc_url( home_url( '/' ) ); ?>wp-content/themes/energie-armoede/js/flexibility-master/flexibility.js"></script>
   <link href="https://fonts.googleapis.com/css?family=Bitter:400,700|Roboto:400,700" rel="stylesheet">
 	<?php wp_head(); ?>
 </head>
 
+ <script>flexibility(document.documentElement);</script>
 <body <?php body_class(); ?>>
 
 	<header class="site-header">
@@ -34,7 +36,7 @@
           <!-- Logo in mobile menu -->
 
 						<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
-							<img src="<?php echo esc_url( home_url( '/' ) ); ?>wp-content/themes/energie-armoede/images/ea_logo.svg">
+							<img src="<?php echo esc_url( home_url( '/' ) ); ?>wp-content/themes/energie-armoede/images/ea_logo.svg" border=0>
 						</a>
 
             <!-- Button in mobile menu -->
@@ -55,7 +57,7 @@
 				<div id="navigation-items">
 					<div id="navigation-logo">
 						<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
-							<img src="<?php echo esc_url( home_url( '/' ) ); ?>wp-content/themes/energie-armoede/images/ea_logo.svg">
+							<img src="<?php echo esc_url( home_url( '/' ) ); ?>wp-content/themes/energie-armoede/images/ea_logo.svg" border=0>
 						</a>
 					</div>
 
@@ -81,7 +83,3 @@
   </script>
 
   <div class="site-wrapper">
-
-<!-- Flexibility script -->
-
-<script src="<?php echo esc_url( home_url( '/' ) ); ?>wp-content/themes/energie-armoede/js/flexibility-master/flexibility.js"></script>
