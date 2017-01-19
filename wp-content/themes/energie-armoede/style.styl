@@ -187,8 +187,8 @@ p
 
 #navigation-items, #navigation-items-mobile
   max-width 1440px
-  width 100%
-  padding 0px 50px
+  width 90%
+  padding 0px
   margin 0 auto
   z-index 999
   img
@@ -199,7 +199,10 @@ p
     top 0
 
 @media only screen and (max-width:breakpoint3)
+  #navigation-items
+    width 100%
   #navigation-items-mobile
+    width 100%
     padding 0px 25px
     
 @media only screen and (max-width:breakpoint4)
@@ -315,7 +318,7 @@ p
 
 .best-practices-content
   max-width 1440px
-  width 100%
+  width 90%
   margin 0 auto
   display -ms-flexbox
   display flex
@@ -571,26 +574,25 @@ p
 
 .general-header-content
   max-width 1440px
-  width calc(100% - 100px)
+  width 90%
   margin 0 auto
   z-index 2
-  padding 0px 50px
 
 @media only screen and (max-width:breakpoint2)
   .general-header-content
-    width calc(100% - 100px)
+    width 100%
     padding 0px 50px
     
 @media only screen and (max-width:breakpoint3)
   .general-header-content
-    width calc(100% - 50px)
+    width 100%
     padding 0px 25px
 
 
 // header for 'regular' page
 
 #page-header
-  padding 150px 5sx0px 30px
+  padding 150px 50px 30px
   position relative
   h1
     position absolute
@@ -663,11 +665,10 @@ p
 
 .general-content
   max-width 1440px
-  width calc(100% - 100px)
+  width 90%
   position relative
   background-color white
   margin 0 auto
-  padding 0px 50px
   h1
     headingfont(45px,400)
     margin-top 75px
@@ -795,9 +796,8 @@ aside
       &[data-active="1"]
         background-color #f7f9f9
         padding 20px 25px
-        a
-          color blue
-          font-weight bold
+        color blue
+        font-weight bold
 
 @media only screen and (max-width:breakpoint1)
   aside

@@ -37,9 +37,11 @@ $prev_post = get_adjacent_post($post->ID);
 			foreach($related_posts as $related_post):
 				$related_post_is_current_post = ($post->ID == $related_post->ID);
 			?>
+				<a href="<?php echo get_permalink($related_post->ID); ?>">
 				<li data-active="<?php echo $related_post_is_current_post; ?>">
-					<a href="<?php echo get_permalink($related_post->ID); ?>"><?php echo $related_post->post_title; ?></a>
+					<?php echo $related_post->post_title; ?>
 				</li>
+				</a>
 			<?php endforeach; ?>
 		</ul>
 	</aside>
