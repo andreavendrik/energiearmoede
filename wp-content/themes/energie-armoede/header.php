@@ -6,11 +6,11 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="profile" href="http://gmpg.org/xfn/11">
 	<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-  <script src="https://use.typekit.net/nil6uze.js"></script>
-  <script>try{Typekit.load({ async: true });}catch(e){}</script>
-  <script src="<?php echo esc_url( home_url( '/' ) ); ?>wp-content/themes/energie-armoede/js/flexibility-master/flexibility.js"></script>
-  <link href="https://fonts.googleapis.com/css?family=Bitter:400,700|Roboto:400,700" rel="stylesheet">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+	<script src="https://use.typekit.net/nil6uze.js"></script>
+	<script>try{Typekit.load({ async: true });}catch(e){}</script>
+	<script src="<?php echo esc_url( home_url( '/' ) ); ?>wp-content/themes/energie-armoede/js/flexibility-master/flexibility.js"></script>
+	<link href="https://fonts.googleapis.com/css?family=Bitter:400,700|Roboto:400,700|Bree+Serif" rel="stylesheet">
 	<?php wp_head(); ?>
 </head>
 
