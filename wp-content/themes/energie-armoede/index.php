@@ -25,7 +25,7 @@ $recent_posts = wp_get_recent_posts( $args, ARRAY_A );
 
 				<div class="header-title">
 					<div><h1><?php echo strip_tags(get_field('header_titel', 95), '<strong><br>'); ?></h1></div>
-					<div><h3><?php echo strip_tags(get_field('header_beschrijving', 95), '<strong><br>'); ?></h3></div>
+					<div><h3><?php echo strip_tags(get_field('header_beschrijving', 95), '<strong><br><a>'); ?></h3></div>
 				</div>
 
 			</section>
@@ -39,19 +39,19 @@ $recent_posts = wp_get_recent_posts( $args, ARRAY_A );
 						<div id="best-practices-1">
 							<img src="<?php echo esc_url( home_url( '/' ) ); ?>wp-content/themes/energie-armoede/images/best_practice_01.svg">
 							<p>
-								<?php echo strip_tags(get_field('belangrijkste_les_1', 95), '<strong><br>'); ?>
+								<?php echo strip_tags(get_field('belangrijkste_les_1', 95), '<strong><br><a>'); ?>
 							</p>
 					</div>
 					<div id="best-practices-2">
 						<img src="<?php echo esc_url( home_url( '/' ) ); ?>wp-content/themes/energie-armoede/images/best_practice_02.svg">
 						<p>
-								<?php echo strip_tags(get_field('belangrijkste_les_2', 95), '<strong><br>'); ?>
+								<?php echo strip_tags(get_field('belangrijkste_les_2', 95), '<strong><br><a>'); ?>
 						</p>
 					</div>
 					<div id="best-practices-3">
 						<img src="<?php echo esc_url( home_url( '/' ) ); ?>wp-content/themes/energie-armoede/images/best_practice_03.svg">
 						<p>
-								<?php echo strip_tags(get_field('belangrijkste_les_3', 95), '<strong><br>'); ?>
+								<?php echo strip_tags(get_field('belangrijkste_les_3', 95), '<strong><br><a>'); ?>
 						</p>
 					</div>
 				</div>
@@ -60,7 +60,7 @@ $recent_posts = wp_get_recent_posts( $args, ARRAY_A );
 				<section class="categories">
 
 					<h1><?php echo strip_tags(get_field('toolkit_titel', 95), '<strong><br>'); ?></h1>
-					<h3><?php echo strip_tags(get_field('toolkit_beschrijving', 95), '<strong><br>'); ?></h3>
+					<h3><?php echo strip_tags(get_field('toolkit_beschrijving', 95), '<strong><br><a>'); ?></h3>
 
 				<?php
 				$category_name = 'Project opzet';
